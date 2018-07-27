@@ -6,19 +6,28 @@ $(document).ready(() => {
   console.log('Custom scripting goes here');
 
 
-  const testData = [
-    { player: 'Ben Simmons', winshare: 9.2 },
-    { player: 'Jasyon Taturm', winshare: 7.1 },
-    { player: 'Josh Hart', winshare: 3.4 },
-    { player: 'Lauri Markkanen', winshare: 3.3 },
-    { player: 'Tyler Cavanaugh', winshare: 1.2 },
-    { player: 'Justin Jackson', winshare: 1.0 },
-    { player: 'Jamil Wilson', winshare: 0.5 },
-    { player: 'Jalen Jones', winshare: 0.1 },
-    { player: 'Josh Jackson', winshare: -0.7 },
-    { player: 'Dennis Smith', winshare: -0.7 },
-  ];
-
+  const testData = {
+    metrics: ['winshare', 'per'],
+    stats: [],
+    players: [
+      {
+        player: 'Ben Simmons',
+        metrics: {
+          winshare: 9.2,
+          per: 20,
+        },
+      },
+      { player: 'Jasyon Taturm', metrics: { winshare: 7.1, per: 15.3 } },
+      { player: 'Josh Hart', metrics: { winshare: 3.4, per: 12.2 } },
+      { player: 'Lauri Markkanen', metrics: { winshare: 3.3, per: 15.6 } },
+      { player: 'Tyler Cavanaugh', metrics: { winshare: 1.2, per: 13.0 } },
+      { player: 'Justin Jackson', metrics: { winshare: 1.0, per: 9.2 } },
+      { player: 'Jamil Wilson', metrics: { winshare: 0.5, per: 11.4 } },
+      { player: 'Jalen Jones', metrics: { winshare: 0.1, per: 10.3 } },
+      { player: 'Josh Jackson', metrics: { winshare: -0.7, per: 11.8 } },
+      { player: 'Dennis Smith', metrics: { winshare: -0.7, per: 12.8 } },
+    ],
+  };
 
   function getStandardDeviation(data, key) {
     let x = 0;
@@ -30,7 +39,6 @@ $(document).ready(() => {
     });
 
     const standardDeviation = Math.sqrt((y - ((x ** 2) / l)) / (l - 1));
-    console.log(standardDeviation);
     return standardDeviation;
   }
 
@@ -38,22 +46,34 @@ $(document).ready(() => {
     let x = 0;
     data.forEach(obj => x += obj[key]);
     const mean = x / data.length;
-    console.log(mean);
     return mean;
   }
 
+  function setZScores(data) {
+    // get the keys that we need to calculate stats for
+    const metrics = data.metrics;
+
+
+    metrics.forEach((metric) => {
+      const stat = {metric, value}
+    });
+
+    testData.standardDeviations.push(sdObj);
+    testData.means.push(meanObj);
+  }
+
+  setZScores(testData);
+  console.log(testData);
+
   function getZScore(data, scoreKey, target, targetKey) {
     const targetObj = data.filter(obj => obj[targetKey] === target)[0];
-    console.log(targetObj);
     const targetScore = targetObj[scoreKey];
-    console.log(targetScore);
     const standardDeviation = getStandardDeviation(data, scoreKey);
     const mean = getMean(data, scoreKey);
 
     const zScore = (targetScore - mean) / standardDeviation;
-    console.log(zScore);
     return zScore;
   }
 
-  getZScore(testData, 'winshare', 'Ben Simmons', 'player');
+  // getZScore(testData, 'winshare', 'Ben Simmons', 'player');
 });
