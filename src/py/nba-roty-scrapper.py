@@ -58,6 +58,41 @@ def setStats(data):
 
         data["stats"].append(target_metric)
 
+# ------------------------------------------------------------------------------
+# GETTING THE NBA STANDINGS SO WE CAN GET TEAM GAMES AND WINS
+
+# empty list to hold our team objects
+standings = []
+
+# getting the expanded standings broken down into rows
+standings_request = requests.get("https://widgets.sports-reference.com/wg.fcgi?css=1&site=bbr&url=%2Fleagues%2FNBA_2018_standings.html&div=div_expanded_standings")
+standings_content = BeautifulSoup(standings_request.text, "html.parser")
+standings_table = standings_content.find("table", {"id": "expanded_standings"})
+standings_rows = standings_table.find("tbody").findAll("tr")
+
+# for each row ...
+for row in standings_rows:
+
+    # determine the team's record, wins and losses, wins games and team abbreviation
+    record = row.find("td", {"data-stat": "Overall"}).text
+    wins_losses = record.split("-")
+    wins = int(wins_losses[0])
+    games = int(wins_losses[0]) + int(wins_losses[1])
+    link = row.find("td", {"data-stat": "team_name"}).find("a").get("href")
+    split_link = link.split("teams/")
+    team_short = split_link[1].split("/")[0]
+
+    # create the team object
+    team = {}
+    team["team_name"] = row.find("td", {"data-stat": "team_name"}).text
+    team["record"] = record
+    team["wins"] = wins
+    team["games"] = games
+    team["short_name"] = team_short
+
+    # append it to the standings list
+    standings.append(team)
+
 
 # The getting of the original data that writes the data into an html file. For production
 # we'll probably want to skip the writing of the file and somehow convert the table text to html
@@ -107,6 +142,7 @@ with open('../data/rookies.html', 'r') as rookies_table_file:
                 "player": rookie.find("td", {"data-stat": "player"}).text,
                 "team": rookie.find("td", {"data-stat": "team_id"}).text,
                 "wins": 0,
+                "games": rookie.find("td", {"data-stat": "g"}).text,
                 "metrics": {
                     "winshare": winshare,
                     "per": per,
