@@ -35,6 +35,6 @@ export default function (originalData, formattedData) {
             return x(d[1]);
           })
           .attr('cy', svgHeight / 2)
-          .style('fill', 'red');
+          .style('fill', ('red'));
   });
 }
