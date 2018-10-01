@@ -3,8 +3,11 @@ import math
 import pprint
 import re
 import requests
+import sys
 
 from bs4 import BeautifulSoup
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 from operator import itemgetter
 
 
@@ -17,8 +20,6 @@ from operator import itemgetter
 # test on actual link
 # lambda function and aws hosting
 # better commenting
-
-
 
 
 # headers info for requesting from the nba api
@@ -265,7 +266,8 @@ def get_advance_metrics(players):
     for player in players:
         for row in all_br_rows:
             try:
-                if player["player"] == row.find("td", {"data-stat": "player"}).text:
+                if fuzz.token_sort_ratio(player["player"], row.find("td", {"data-stat": "player"}).text) >= 80:
+                    print(player["player"], row.find("td", {"data-stat": "player"}).text)
                     player["metrics"]["winshare"] = float(row.find("td", {"data-stat": "ws"}).text)
                     player["metrics"]["per"] = float(row.find("td", {"data-stat": "per"}).text)
                     player["metrics"]["usg"] = float(row.find("td", {"data-stat": "usg_pct"}).text)
@@ -295,7 +297,7 @@ def calculate_z_scores(data):
 
     data["players"] = sorted(data["players"], key=lambda x: (
         x['zscores']['total_adv'], x['zscores']['total_stand']))
-
+    data["players"].reverse()
 
 
 # get the initial player set

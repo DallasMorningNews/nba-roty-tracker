@@ -8,6 +8,9 @@ requests = "*"
 "bs4" = "*"
 jupyter = "*"
 pandas = "*"
+matplotlib = "*"
+scipy = "*"
+fuzzywuzzy = "*"
 
 [dev-packages]
 
