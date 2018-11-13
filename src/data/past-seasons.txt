@@ -1,0 +1,269 @@
+2017
+Advanced
+_________
+Willy Hernangomez, 6.937584850399822
+*Malcolm Brogdon, 5.404532762781402
+Davis Bertans, 3.5339876731218025
+Dario Saric, 2.9024796235519297
+Marquese Chriss, 2.2966430636401416
+Jamal Murray, 1.7637515989797774
+Buddy Hield, 1.5884524062398238
+Juancho Hernangomez, 1.2931751097404014
+Mindaugas Kuzminskas, 1.0702179469972366
+Rodney McGruder, 0.6365573924137791
+===========
+Traditional
+_________
+Dario Saric, 6.386323226464265
+*Malcolm Brogdon, 6.052591004037047
+Marquese Chriss, 4.9774694601651515
+Willy Hernangomez, 4.067162714378333
+Brandon Ingram, 3.2673200932921196
+Kris Dunn, 2.1203805485815863
+Isaiah Whitehead, 1.913149975525871
+Jamal Murray, 1.5074163713600264
+Tyler Ulis, 1.4397238875571543
+Andrew Harrison, 0.634554608145665
+
+2016
+Advanced
+_________
+*Karl-Anthony Towns, 8.165187709064663
+Nikola Jokic, 6.854854963693154
+Kristaps Porzingis, 4.3089712046054105
+Myles Turner, 1.379477073897432
+Willie Cauley-Stein, 1.0138480828148737
+D'Angelo Russell, 0.4951336487108611
+Frank Kaminsky, 0.3311290260119518
+Devin Booker, 0.24168781386828886
+Bobby Portis, -0.10950431403714711
+T.J. McConnell, -0.17957010022801223
+===========
+Traditional
+_________
+*Karl-Anthony Towns, 7.758387727593777
+Kristaps Porzingis, 5.1646989798530125
+Emmanuel Mudiay, 4.645105616439026
+Nikola Jokic, 3.431868451124099
+D'Angelo Russell, 3.2596886404088865
+T.J. McConnell, 2.0576670779081434
+Myles Turner, 0.8924809971636047
+Devin Booker, 0.5091542659411783
+Willie Cauley-Stein, 0.2347056934293209
+Justise Winslow, 0.12755231825123703
+
+2015
+Advanced
+_________
+Nikola Mirotic, 7.451066292160116
+Jordan Clarkson, 4.249492123687058
+Nerlens Noel, 3.604491695878729
+Jusuf Nurkic, 2.2813108638992876
+*Andrew Wiggins, 1.9470086503220116
+Elfrid Payton, 1.6940826348268585
+Marcus Smart, 1.318456370745634
+Tarik Black, 0.6988284494692012
+Bojan Bogdanovic, 0.18317011702611163
+James Ennis III, -0.7499928140375296
+===========
+Traditional
+_________
+Nerlens Noel, 7.987550713965223
+Elfrid Payton, 5.183443944249268
+*Andrew Wiggins, 4.213108329921557
+Jordan Clarkson, 1.821780256525117
+Marcus Smart, 1.8101648773647607
+Jusuf Nurkic, 1.6840957437565658
+Nikola Mirotic, 1.255572386933034
+Zach LaVine, 0.48755436625050075
+KJ McDaniels, 0.4505645893570327
+Jerami Grant, -0.5696490666769538
+
+2014
+Advanced
+_________
+Mason Plumlee, 7.236628627203474
+Kelly Olynyk, 4.035536351108142
+*Michael Carter-Williams, 3.314499223345571
+Gorgui Dieng, 2.855078206777553
+Victor Oladipo, 2.0004339185999593
+Cody Zeller, 1.4598318241745745
+Tim Hardaway Jr., 1.411109150162222
+Ryan Kelly, 0.7902060804887923
+Jeff Withey, 0.5947921155144706
+Steven Adams, 0.25723589063087426
+===========
+Traditional
+_________
+*Michael Carter-Williams, 10.712870700988221
+Victor Oladipo, 6.040747024553829
+Giannis Antetokounmpo, 2.0686489944379947
+Trey Burke, 2.025198907260852
+Mason Plumlee, 1.3956847243342088
+Ryan Kelly, 0.9580041650112427
+Kelly Olynyk, 0.8667812957569823
+Gorgui Dieng, 0.49814564966748553
+Cody Zeller, -0.4627657521243201
+Nate Wolters, -0.5581191831942911
+
+2013
+Advanced
+_________
+Anthony Davis, 7.6762517632347045
+*Damian Lillard, 5.873282977772661
+Andre Drummond, 5.5779397819650045
+Jonas Valanciunas, 2.335881554934919
+Terrence Ross, 2.284761832577479
+John Henson, 2.2593859075134173
+Brian Roberts, 1.4179942010373405
+Dion Waiters, 1.272447551145231
+Andrew Nicholson, 0.5596501196828003
+Pablo Prigioni, 0.3955768653881233
+===========
+Traditional
+_________
+Anthony Davis, 8.751672777104416
+*Damian Lillard, 7.182691604088726
+Andre Drummond, 5.472821883032965
+Dion Waiters, 3.662345195492442
+Maurice Harkless, 3.041085796872966
+Michael Kidd-Gilchrist, 3.0395066838195754
+Jonas Valanciunas, 1.9836649060897567
+Tyler Zeller, 1.7799247861776377
+Alexey Shved, 1.6849018250993402
+Kyle Singler, 0.7631354646672441
+
+2012
+Advanced
+_________
+*Kyrie Irving, 8.20629623496787
+Kawhi Leonard, 4.6809318409304375
+Isaiah Thomas, 4.080552104955093
+Gustavo Ayon, 2.736273465568737
+Chandler Parsons, 1.6335090049082457
+Klay Thompson, 1.5552279271024358
+Kemba Walker, 0.881704647257912
+Greg Stiemsma, 0.8272847450936442
+Ivan Johnson, 0.5334555029356741
+Alec Burks, 0.3978979435712912
+===========
+Traditional
+_________
+*Kyrie Irving, 6.308354746148561
+Kemba Walker, 2.8917113141129054
+Chandler Parsons, 2.827074330748433
+Iman Shumpert, 2.7927299160143315
+Kawhi Leonard, 1.9772511841055167
+Gustavo Ayon, 1.7119559085512868
+MarShon Brooks, 1.6384541369890786
+Brandon Knight, 1.6378479647013622
+Tristan Thompson, 1.5735175048701942
+Bismack Biyombo, 1.3686562566906315
+
+2011
+Advanced
+_________
+*Blake Griffin, 9.905089834566066
+Greg Monroe, 4.908917319092463
+John Wall, 3.101327801503338
+Landry Fields, 2.1382321981398804
+Gary Neal, 2.024345638772684
+Ed Davis, 1.9710010399420201
+Tiago Splitter, 1.7747187088052188
+Paul George, 1.3851122169893617
+Trevor Booker, 0.9734068298189227
+Derrick Favors, 0.841841411981041
+===========
+Traditional
+_________
+John Wall, 9.174049248761214
+*Blake Griffin, 8.15706950151073
+DeMarcus Cousins, 5.575884586348726
+Greg Monroe, 3.4248194524397197
+Ed Davis, 1.9996260086230815
+Landry Fields, 1.7980947471561781
+Eric Bledsoe, 1.2736076274262418
+Wesley Johnson, 0.8980455531892096
+Ekpe Udoh, 0.5607916481177408
+Paul George, 0.42436897877686774
+
+2010
+Advanced
+_________
+*Tyreke Evans, 7.376432115568621
+Marcus Thornton, 4.908451660675839
+Brandon Jennings, 4.73820637927932
+DeJuan Blair, 4.717418222292976
+Stephen Curry, 4.633768650798014
+James Harden, 3.1731607610795685
+Darren Collison, 2.5856467587350402
+Ty Lawson, 2.4984213547727725
+Taj Gibson, 1.3257572534701487
+Jonas Jerebko, 1.1257572383316425
+===========
+Traditional
+_________
+*Tyreke Evans, 8.00943332778699
+Stephen Curry, 7.401786915458829
+Brandon Jennings, 4.687046350186654
+Taj Gibson, 4.5402346668325375
+Darren Collison, 2.4147333103979713
+Jonas Jerebko, 2.0882133402235254
+Jonny Flynn, 1.6420690907752291
+Serge Ibaka, 1.4518705434362804
+DeJuan Blair, 1.34922462163473
+James Harden, 1.0149190315370327
+
+2009
+Advanced
+_________
+Rudy Fernandez, 3.6797274875071926
+Brook Lopez, 3.567842466847123
+Marc Gasol, 3.391213429334455
+Kevin Love, 3.1711533332885313
+Greg Oden, 3.062945853273763
+*Derrick Rose, 2.8528479968471934
+Michael Beasley, 2.383840754095993
+Marreese Speights, 2.2499043312747156
+Russell Westbrook, 2.178085106281171
+D.J. Augustin, 1.9888917340986274
+===========
+Traditional
+_________
+Russell Westbrook, 5.130987372870901
+Brook Lopez, 4.980624564359963
+*Derrick Rose, 4.373644266719048
+Mario Chalmers, 4.185433589323352
+Marc Gasol, 3.9627148859309944
+O.J. Mayo, 3.5380288179499604
+Eric Gordon, 2.344969492365201
+Jason Thompson, 1.9121144579668448
+Kevin Love, 1.8776662770202175
+Anthony Randolph, 1.63224533905297
+
+2008
+Advanced
+_________
+Luis Scola, 5.107877018430625
+Jamario Moon, 4.13822170238544
+*Kevin Durant, 4.083518818573147
+Thaddeus Young, 3.7812281392812843
+Joakim Noah, 3.1139820908988107
+Al Horford, 2.9487467181978513
+Jared Dudley, 0.9743349722472181
+Aaron Gray, 0.956244528541698
+Sean Williams, 0.43230729582055083
+Al Thornton, 0.36445690809517206
+===========
+Traditional
+_________
+*Kevin Durant, 8.181884542577466
+Al Horford, 5.782796631644292
+Jamario Moon, 5.367785015788266
+Joakim Noah, 2.891794873313596
+Jeff Green, 2.252045907201695
+Luis Scola, 2.1484277368877227
+Al Thornton, 1.909534499840892
+Corey Brewer, 1.2165219629316664
+Juan Carlos Navarro, 1.0946036912245598
+Yi Jianlian, 0.9286977302045564

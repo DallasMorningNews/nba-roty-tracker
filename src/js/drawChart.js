@@ -1,40 +1,84 @@
-export default function (originalData, formattedData) {
-  console.log(originalData, formattedData);
-  const svgWidth = document.getElementsByClassName('z-score')[0].offsetWidth;
-  const svgHeight = document.getElementsByClassName('z-score')[0].offsetHeight;
+/* global d3:true */
+
+export default function (originalData, formattedData, name) {
+  const playerElem = d3.select('.player').node();
+  const svgWidth = playerElem.getBoundingClientRect().width;
+  const svgHeight = 50;
+  const dotRadius = 4;
+
+  d3.selection.prototype.moveToFront = function () {
+    return this.each(function () {
+      this.parentNode.appendChild(this);
+    });
+  };
 
   const x = d3.scaleLinear()
-    .range([0, svgWidth]);
+    .range([(dotRadius + 1), svgWidth - (dotRadius + 1)]);
+
+  const targetPlayer = d3.selectAll('.player')
+    .datum(function () {
+      return this.dataset;
+    })
+    .filter((d) => {
+      if (d.playername === name) {
+        return d;
+      } return null;
+    });
 
   originalData.metrics.forEach((metric) => {
-    const swarms = d3.selectAll(`.z-score-${metric}`)
+    const targetMetric = targetPlayer.select(`.z-score-${metric}`)
       .append('svg')
-      .attr('width', svgWidth)
-      .attr('height', svgHeight)
-        .append('line')
-          .attr('class', 'z-spine')
-          .attr('x1', 0)
-          .attr('y1', svgHeight / 2)
-          .attr('x2', svgWidth)
-          .attr('y2', svgHeight / 2);
+        .attr('width', svgWidth)
+        .attr('height', svgHeight);
+
+    targetMetric.append('text')
+      .attr('y', 10)
+      .attr('class', 'line-label')
+      .text(metric);
+
+    targetMetric.append('line')
+        .attr('class', 'z-spine')
+        .attr('x1', dotRadius)
+        .attr('y1', svgHeight / 2)
+        .attr('x2', svgWidth - dotRadius)
+        .attr('y2', svgHeight / 2);
   });
 
   formattedData.forEach((datum) => {
-    console.log(datum);
-    x.domain(d3.extent(datum.values, function (d) { return d[1]; }));
-    console.log(x.domain);
-    const dots = d3.selectAll(`.z-score-${datum.metric}`).select('svg')
+    x.domain(d3.extent(datum.values, d => d[1]));
+
+    const dots = targetPlayer.select(`.z-score-${datum.metric}`).select('svg')
       .selectAll('.dot')
         .data(datum.values)
         .enter()
           .append('circle')
           .attr('class', 'dot')
-          .attr('r', 2)
+          .attr('r', dotRadius)
           .attr('cx', (d) => {
-            console.log(d);
             return x(d[1]);
           })
           .attr('cy', svgHeight / 2)
-          .style('fill', ('red'));
+          .attr('stroke', (d) => {
+            if (d[0] === name) {
+              return '#329ce8';
+            } return 'rgb(175,175,175)';
+          })
+          .attr('stroke-width', 1)
+          .style('fill', (d) => {
+            if (d[0] === name) {
+              return '#329ce8';
+            } return 'rgb(215,215,215)';
+          })
+          .style('opacity', (d) => {
+            if (d[0] === name) {
+              return 1;
+            } return 0.5;
+          });
+  });
+
+  d3.selectAll('.dot').filter(function (d) {
+    if (d !== undefined && d[0] === name) {
+      d3.select(this).moveToFront();
+    } return null;
   });
 }

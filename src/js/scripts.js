@@ -1,13 +1,28 @@
 /* global d3:true */
 
 import $ from 'jquery';
+import Handlebars from 'handlebars';
+
 import './furniture';
 
 import drawChart from './drawChart';
+import drawRank from './drawRank';
 
 $(document).ready(() => {
   // the location of our player data that's parsed from our python script
-  const DATALOCATION = '../data/roty-metrics.json';
+  const DATALOCATION = 'https://interactives.dallasnews.com/data-store/2018/nba-roty.json';
+
+  // handlebars sourcing and templating
+  const playerModSource = document.getElementById('player-mod').innerHTML;
+  const playerModTemplate = Handlebars.compile(playerModSource);
+
+  Handlebars.registerHelper('imageName', player =>
+    player.toLowerCase()
+    .replace(/\s/g, '')
+    .replace('.', ''));
+
+  Handlebars.registerHelper('roundScore', score => score.toFixed(2));
+
 
   // ***************************************************************************
   // FORMATTING THE DATA
@@ -36,9 +51,37 @@ $(document).ready(() => {
       // pushing that object to our formattedData array
       formattedData.push(metricObject);
     });
+    console.log(data, formattedData);
 
-    console.log(formattedData);
-    drawChart(data, formattedData);
+    const playerModsContainer = document.getElementById('player__mods');
+
+    // let lukaTop5 = false;
+
+    for (let i = 0; i < 8; i += 1) {
+      const playerMod = playerModTemplate(data.players[i]);
+      playerModsContainer.innerHTML += playerMod;
+      drawChart(data, formattedData, data.players[i].player);
+      // if (data.players[i].player.player === 'Luka Doncic') {
+      //   lukaTop5 = true;
+      // }
+    }
+
+    // if (lukaTop5 === false) {
+    //   const luka = data.players.find((player) => {
+    //     if (player.player === 'Luka Doncic') {
+    //       return player;
+    //     }
+    //   });
+    //   console.log(luka);
+    //   const lukaMod = playerModTemplate(luka);
+    //   playerModsContainer.innerHTML += lukaMod;
+    //   drawChart(data, formattedData, 'Luka Doncic');
+    //   playerModsContainer.classList.add('six-grid');
+    // }
+
+    // drawChart(data, formattedData);
+
+    drawRank(data, 'advanced');
   }
 
   // ***************************************************************************
@@ -55,78 +98,4 @@ $(document).ready(() => {
     }
   };
   xhr.send();
-
-  // console.log('Custom scripting goes here');
-  //
-  //
-  // const testData = {
-  //   metrics: ['winshare', 'per'],
-  //   stats: [],
-  //   players: [
-  //     {
-  //       player: 'Ben Simmons',
-  //       metrics: {
-  //         winshare: 9.2,
-  //         per: 20,
-  //       },
-  //     },
-  //     { player: 'Jasyon Taturm', metrics: { winshare: 7.1, per: 15.3 } },
-  //     { player: 'Josh Hart', metrics: { winshare: 3.4, per: 12.2 } },
-  //     { player: 'Lauri Markkanen', metrics: { winshare: 3.3, per: 15.6 } },
-  //     { player: 'Tyler Cavanaugh', metrics: { winshare: 1.2, per: 13.0 } },
-  //     { player: 'Justin Jackson', metrics: { winshare: 1.0, per: 9.2 } },
-  //     { player: 'Jamil Wilson', metrics: { winshare: 0.5, per: 11.4 } },
-  //     { player: 'Jalen Jones', metrics: { winshare: 0.1, per: 10.3 } },
-  //     { player: 'Josh Jackson', metrics: { winshare: -0.7, per: 11.8 } },
-  //     { player: 'Dennis Smith', metrics: { winshare: -0.7, per: 12.8 } },
-  //   ],
-  // };
-  //
-  // function getStandardDeviation(data, key) {
-  //   let x = 0;
-  //   let y = 0;
-  //   let l = data.length;
-  //   data.forEach((obj) => {
-  //     x += obj[key];
-  //     y += obj[key] ** 2;
-  //   });
-  //
-  //   const standardDeviation = Math.sqrt((y - ((x ** 2) / l)) / (l - 1));
-  //   return standardDeviation;
-  // }
-  //
-  // function getMean(data, key) {
-  //   let x = 0;
-  //   data.forEach(obj => x += obj[key]);
-  //   const mean = x / data.length;
-  //   return mean;
-  // }
-  //
-  // function setZScores(data) {
-  //   // get the keys that we need to calculate stats for
-  //   const metrics = data.metrics;
-  //
-  //
-  //   metrics.forEach((metric) => {
-  //     const stat = {metric, value}
-  //   });
-  //
-  //   testData.standardDeviations.push(sdObj);
-  //   testData.means.push(meanObj);
-  // }
-  //
-  // setZScores(testData);
-  // console.log(testData);
-  //
-  // function getZScore(data, scoreKey, target, targetKey) {
-  //   const targetObj = data.filter(obj => obj[targetKey] === target)[0];
-  //   const targetScore = targetObj[scoreKey];
-  //   const standardDeviation = getStandardDeviation(data, scoreKey);
-  //   const mean = getMean(data, scoreKey);
-  //
-  //   const zScore = (targetScore - mean) / standardDeviation;
-  //   return zScore;
-  // }
-  //
-  // // getZScore(testData, 'winshare', 'Ben Simmons', 'player');
 });

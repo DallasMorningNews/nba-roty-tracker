@@ -36,7 +36,7 @@
         "dateCreated": "{{publishDate}}",
         "articleSection": "{{section}}",
         "creator": ["{{authors|join('","')|safe}}"],
-        "keywords": ["Refresh", "{{keywords|join('","')|safe}}"]
+        "keywords": ["{{keywords|join('","')|safe}}"]
       }
 </script>
 
@@ -48,6 +48,30 @@
 
 {%block custom_head%}
   <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  {% raw %}
+
+  <script id="player-mod" type="text/x-handlebars-template">
+    <div class="player" data-playername="{{player}}">
+      <img src="images/_{{imageName player}}.jpg" alt="{{player}}" />
+      <h5>{{player}}</h5>
+      <p>{{team}}</p>
+      <p><span class="scoree-label">Advanced z-score: </span>{{roundScore total_adv_zscore}}</p>
+      <div class="z-scores">
+        <div class="z-score z-score__trad z-score-ppg"></div>
+        <div class="z-score z-score__trad z-score-rpg"></div>
+        <div class="z-score z-score__trad z-score-apg"></div>
+        <div class="z-score z-score__trad z-score-spg"></div>
+        <div class="z-score z-score__trad z-score-bpg"></div>
+        <div class="z-score z-score__adv z-score-winshare"></div>
+        <div class="z-score z-score__adv z-score-vorp"></div>
+        <div class="z-score z-score__adv z-score-usg"></div>
+        <div class="z-score z-score__adv z-score-per"></div>
+      </div>
+    </div>
+  </script>
+
+  {% endraw %}
 {%endblock%}
 
 
@@ -146,81 +170,17 @@ googletag.cmd.push(function () {
 
     <p class="intro"><span class="dropcap">A</span>n opening paragraph goes here. I love the Weather & Opera section plagiarism Julian Assange syndicated process vs. product curmudgeon, attracting young readers cognitive surplus the audience knows more than I do discuss anonymity WikiLeaks hyperhyperlocal Arianna future scoop, Twitter topples dictators the medium is the message information overload natural-born blogger metered model Colbert bump Julian Assange CTR.</p>
 
+    <div id="player__ranks" class="chart">
+      <h5>Where Doncic ranks</h5>
+      <p class="chatter">Luka Doncic’s rank among all other qualified rookies in aggregate z-score:</p>
+      <div class="chart__container"></div>
+    </div>
+
     <p>column-inch trolls copyboy data visualization AOL afternoon paper shoot a photo attracting young readers, MinnPost but what's the business model Instagram fair use fourth estate morgue writing, The Work of Art in the Age of Mechanical Reproduction audience atomization overcome free as in beer Pictures of Goats section kitchen table of the future masthead.</p>
 
 
-    <div id="player__blocks">
-      <div class="players">
-        <div class="player">
-          <img src="images/_defaultImage.jpg" alt="#" />
-          <h4>Ben Simmons</h4>
-          <p>Team name</p>
-          <p>##.#</p>
-          <div class="z-scores">
-            <div class="z-score z-score-ppg"></div>
-            <div class="z-score z-score-rpg"></div>
-            <div class="z-score z-score-apg"></div>
-            <div class="z-score z-score-spg"></div>
-            <div class="z-score z-score-bpg"></div>
-            <div class="z-score z-score-winshare"></div>
-            <div class="z-score z-score-bpm"></div>
-            <div class="z-score z-score-usg"></div>
-            <div class="z-score z-score-per"></div>
-          </div>
-        </div>
-        <div class="player">
-          <img src="images/_defaultImage.jpg" alt="#" />
-          <h4>Donovan Mitchell</h4>
-          <p>Team name</p>
-          <p>##.#</p>
-          <div class="z-scores">
-            <div class="z-score z-score-ppg"></div>
-            <div class="z-score z-score-rpg"></div>
-            <div class="z-score z-score-apg"></div>
-            <div class="z-score z-score-spg"></div>
-            <div class="z-score z-score-bpg"></div>
-            <div class="z-score z-score-winshare"></div>
-            <div class="z-score z-score-bpm"></div>
-            <div class="z-score z-score-usg"></div>
-            <div class="z-score z-score-per"></div>
-          </div>
-        </div>
-        <div class="player">
-          <img src="images/_defaultImage.jpg" alt="#" />
-          <h4>John Collins</h4>
-          <p>Team name</p>
-          <p>##.#</p>
-          <div class="z-scores">
-            <div class="z-score z-score-ppg"></div>
-            <div class="z-score z-score-rpg"></div>
-            <div class="z-score z-score-apg"></div>
-            <div class="z-score z-score-spg"></div>
-            <div class="z-score z-score-bpg"></div>
-            <div class="z-score z-score-winshare"></div>
-            <div class="z-score z-score-bpm"></div>
-            <div class="z-score z-score-usg"></div>
-            <div class="z-score z-score-per"></div>
-          </div>
-        </div>
-        <div class="player">
-          <img src="images/_defaultImage.jpg" alt="#" />
-          <h4>Jason Tatum</h4>
-          <p>Team name</p>
-          <p>##.#</p>
-          <div class="z-scores">
-            <div class="z-score z-score-ppg"></div>
-            <div class="z-score z-score-rpg"></div>
-            <div class="z-score z-score-apg"></div>
-            <div class="z-score z-score-spg"></div>
-            <div class="z-score z-score-bpg"></div>
-            <div class="z-score z-score-winshare"></div>
-            <div class="z-score z-score-bpm"></div>
-            <div class="z-score z-score-usg"></div>
-            <div class="z-score z-score-per"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    <div id="player__mods"></div>
 
 
 

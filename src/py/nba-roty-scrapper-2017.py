@@ -25,14 +25,14 @@ HEADERS = {'user-agent': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) Apple
 # base data dictionary. We'll iterate over the data from basketball-reference (BR)
 # and parse the data for players and stats and add it to this dictionary
 rookie_data = {
-    "metrics": ['winshare', 'per', 'usg', 'vorp', 'ppg', 'rpg', 'apg', 'spg', 'bpg'],
+    "metrics": ['winshare', 'per', 'usg', 'bpm', 'ppg', 'rpg', 'apg', 'spg', 'bpg'],
     "stats": [],
     "players": []
 }
 
 # empty list to hold our team objects
 standings = {
-    "2018": []
+    "2017": []
 }
 
 def get_standard_deviation(data, key):
@@ -149,7 +149,7 @@ def get_player_set(year):
                 "winshare": 0,
                 "per": 0,
                 "usg": 0,
-                "vorp": 0,
+                "bpm": 0,
                 "ppg": player[29],
                 "rpg": player[21],
                 "apg": player[22],
@@ -161,7 +161,7 @@ def get_player_set(year):
                 "winshare": 0,
                 "per": 0,
                 "usg": 0,
-                "vorp": 0,
+                "bpm": 0,
                 "ppg": 0,
                 "rpg": 0,
                 "apg": 0,
@@ -243,9 +243,9 @@ def weed_players(players):
 
 def get_advance_metrics(players):
 
-    first_100 = requests.get("https://widgets.sports-reference.com/wg.fcgi?css=1&site=bbr&url=%2Fplay-index%2Fpsl_finder.cgi%3Frequest%3D1%26match%3Dsingle%26type%3Dtotals%26per_minute_base%3D36%26per_poss_base%3D100%26season_start%3D1%26season_end%3D1%26lg_id%3DNBA%26age_min%3D0%26age_max%3D99%26is_playoffs%3DN%26height_min%3D0%26height_max%3D99%26year_min%3D2018%26year_max%3D2018%26birth_country_is%3DY%26as_comp%3Dgt%26as_val%3D0%26pos_is_g%3DY%26pos_is_gf%3DY%26pos_is_f%3DY%26pos_is_fg%3DY%26pos_is_fc%3DY%26pos_is_c%3DY%26pos_is_cf%3DY%26qual%3Dmp_per_g_req%26c1stat%3Dusg_pct%26c1comp%3Dgt%26c1val%3D0%26c2stat%3Dper%26c2comp%3Dgt%26c2val%3D-10%26c3stat%3Dws%26c3comp%3Dgt%26c3val%3D-10%26c4stat%3Dvorp%26c4comp%3Dgt%26c4val%3D-10%26c5val%3D.7%26order_by%3Dws&div=div_stats")
+    first_100 = requests.get("https://widgets.sports-reference.com/wg.fcgi?css=1&site=bbr&url=%2Fplay-index%2Fpsl_finder.cgi%3Frequest%3D1%26match%3Dsingle%26type%3Dtotals%26per_minute_base%3D36%26per_poss_base%3D100%26lg_id%3DNBA%26is_playoffs%3DN%26year_min%3D2017%26year_max%3D2017%26franch_id%3D%26season_start%3D1%26season_end%3D1%26age_min%3D0%26age_max%3D99%26shoot_hand%3D%26height_min%3D0%26height_max%3D99%26birth_country_is%3DY%26birth_country%3D%26birth_state%3D%26college_id%3D%26draft_year%3D%26is_active%3D%26debut_yr_nba_start%3D%26debut_yr_nba_end%3D%26is_hof%3D%26is_as%3D%26as_comp%3Dgt%26as_val%3D0%26award%3D%26pos_is_g%3DY%26pos_is_gf%3DY%26pos_is_f%3DY%26pos_is_fg%3DY%26pos_is_fc%3DY%26pos_is_c%3DY%26pos_is_cf%3DY%26qual%3D%26c1stat%3Dws%26c1comp%3Dgt%26c1val%3D-100%26c2stat%3Dbpm%26c2comp%3Dgt%26c2val%3D-100%26c3stat%3Dper%26c3comp%3Dgt%26c3val%3D-100%26c4stat%3Dusg_pct%26c4comp%3Dgt%26c4val%3D0%26c5stat%3D%26c5comp%3D%26c6mult%3D%26c6stat%3D%26order_by%3Dws%26order_by_asc%3D%26offset%3D0&div=div_stats")
 
-    second_100 = requests.get("https://widgets.sports-reference.com/wg.fcgi?css=1&site=bbr&url=%2Fplay-index%2Fpsl_finder.cgi%3Frequest%3D1%26match%3Dsingle%26type%3Dtotals%26per_minute_base%3D36%26per_poss_base%3D100%26season_start%3D1%26season_end%3D1%26lg_id%3DNBA%26age_min%3D0%26age_max%3D99%26is_playoffs%3DN%26height_min%3D0%26height_max%3D99%26year_min%3D2018%26year_max%3D2018%26birth_country_is%3DY%26as_comp%3Dgt%26as_val%3D0%26pos_is_g%3DY%26pos_is_gf%3DY%26pos_is_f%3DY%26pos_is_fg%3DY%26pos_is_fc%3DY%26pos_is_c%3DY%26pos_is_cf%3DY%26qual%3Dmp_per_g_req%26c1stat%3Dusg_pct%26c1comp%3Dgt%26c1val%3D0%26c2stat%3Dper%26c2comp%3Dgt%26c2val%3D-10%26c3stat%3Dws%26c3comp%3Dgt%26c3val%3D-10%26c4stat%3Dvorp%26c4comp%3Dgt%26c4val%3D-10%26c5val%3D.7%26order_by%3Dws&%3D%26offset%3D100&div=div_stats")
+    second_100 = requests.get("https://widgets.sports-reference.com/wg.fcgi?css=1&site=bbr&url=%2Fplay-index%2Fpsl_finder.cgi%3Frequest%3D1%26match%3Dsingle%26type%3Dtotals%26per_minute_base%3D36%26per_poss_base%3D100%26lg_id%3DNBA%26is_playoffs%3DN%26year_min%3D2017%26year_max%3D2017%26franch_id%3D%26season_start%3D1%26season_end%3D1%26age_min%3D0%26age_max%3D99%26shoot_hand%3D%26height_min%3D0%26height_max%3D99%26birth_country_is%3DY%26birth_country%3D%26birth_state%3D%26college_id%3D%26draft_year%3D%26is_active%3D%26debut_yr_nba_start%3D%26debut_yr_nba_end%3D%26is_hof%3D%26is_as%3D%26as_comp%3Dgt%26as_val%3D0%26award%3D%26pos_is_g%3DY%26pos_is_gf%3DY%26pos_is_f%3DY%26pos_is_fg%3DY%26pos_is_fc%3DY%26pos_is_c%3DY%26pos_is_cf%3DY%26qual%3D%26c1stat%3Dws%26c1comp%3Dgt%26c1val%3D-100%26c2stat%3Dbpm%26c2comp%3Dgt%26c2val%3D-100%26c3stat%3Dper%26c3comp%3Dgt%26c3val%3D-100%26c4stat%3Dusg_pct%26c4comp%3Dgt%26c4val%3D0%26c5stat%3D%26c5comp%3D%26c6mult%3D%26c6stat%3D%26order_by%3Dws%26order_by_asc%3D%26offset%3D100&div=div_stats")
 
     first_100_content = BeautifulSoup(first_100.text, "html.parser")
     second_100_content = BeautifulSoup(second_100.text, "html.parser")
@@ -254,10 +254,7 @@ def get_advance_metrics(players):
     second_table = second_100_content.find("tbody")
 
     first_rows = first_table.findAll("tr")
-    try:
-        second_rows = second_table.findAll("tr")
-    except AttributeError:
-        second_rows = []
+    second_rows = second_table.findAll("tr")
 
     all_br_rows = first_rows + second_rows
 
@@ -269,7 +266,7 @@ def get_advance_metrics(players):
                     player["metrics"]["winshare"] = float(row.find("td", {"data-stat": "ws"}).text)
                     player["metrics"]["per"] = float(row.find("td", {"data-stat": "per"}).text)
                     player["metrics"]["usg"] = float(row.find("td", {"data-stat": "usg_pct"}).text)
-                    player["metrics"]["vorp"] = float(row.find("td", {"data-stat": "vorp"}).text)
+                    player["metrics"]["bpm"] = float(row.find("td", {"data-stat": "bpm"}).text)
             except AttributeError:
                 continue
 
@@ -286,7 +283,7 @@ def calculate_z_scores(data):
     for player in data["players"]:
         player["total_stand_zscore"] = player["zscores"]["ppg"] + player["zscores"]["rpg"] + player["zscores"]["apg"] + player["zscores"]["spg"] + player["zscores"]["bpg"]
 
-        player["total_adv_zscore"] = player["zscores"]["winshare"] + player["zscores"]["vorp"] + player["zscores"]["per"] + player["zscores"]["usg"]
+        player["total_adv_zscore"] = player["zscores"]["winshare"] + player["zscores"]["bpm"] + player["zscores"]["per"] + player["zscores"]["usg"]
 
     data["players"] = sorted(data["players"], key=lambda x: (
         x['total_adv_zscore'], x['total_stand_zscore']))
@@ -294,13 +291,13 @@ def calculate_z_scores(data):
 
 
 # get the initial player set
-get_player_set("2017-18")
+get_player_set("2016-17")
 
 # get that season's corresponding team standings
-get_standings("2018")
+get_standings("2017")
 
 # add team games to the player dictionaries
-assign_games(rookie_data["players"], standings["2018"])
+assign_games(rookie_data["players"], standings["2017"])
 
 # filter our player set down to those who have played 70% of their team's games
 weed_players(rookie_data["players"])
@@ -315,5 +312,5 @@ set_stats(rookie_data)
 calculate_z_scores(rookie_data)
 
 # !!!! MOVE THIS TO THE END FOR AUTOMATED SCRAPER
-with open('../data/roty-metrics.json', 'w') as data_file:
+with open('../data/roty-metrics-2017.json', 'w') as data_file:
     json.dump(rookie_data, data_file)
