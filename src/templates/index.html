@@ -56,17 +56,19 @@
       <img src="images/_{{imageName player}}.jpg" alt="{{player}}" />
       <h5>{{player}}</h5>
       <p>{{team}}</p>
-      <p><span class="scoree-label">Advanced z-score: </span>{{roundScore total_adv_zscore}}</p>
+      <p class="advanced"><span class="score-label">Advanced z-score: </span>{{roundScore total_adv_zscore}}</p>
+      <p class="traditional"><span class="score-label">Traditional z-score: </span>{{roundScore total_stand_zscore}}</p>
       <div class="z-scores">
-        <div class="z-score z-score__trad z-score-ppg"></div>
-        <div class="z-score z-score__trad z-score-rpg"></div>
-        <div class="z-score z-score__trad z-score-apg"></div>
-        <div class="z-score z-score__trad z-score-spg"></div>
-        <div class="z-score z-score__trad z-score-bpg"></div>
-        <div class="z-score z-score__adv z-score-winshare"></div>
-        <div class="z-score z-score__adv z-score-vorp"></div>
-        <div class="z-score z-score__adv z-score-usg"></div>
-        <div class="z-score z-score__adv z-score-per"></div>
+        <div class="z-score z-score__trad traditional z-score-ppg"></div>
+        <div class="z-score z-score__trad traditional z-score-rpg"></div>
+        <div class="z-score z-score__trad traditional z-score-apg"></div>
+        <div class="z-score z-score__trad traditional z-score-spg"></div>
+        <div class="z-score z-score__trad traditional z-score-bpg"></div>
+        <div class="z-score z-score__adv advanced z-score-mpg"></div>
+        <div class="z-score z-score__adv advanced z-score-winshare"></div>
+        <div class="z-score z-score__adv advanced z-score-bpm"></div>
+        <div class="z-score z-score__adv advanced z-score-usg"></div>
+        <div class="z-score z-score__adv advanced z-score-per"></div>
       </div>
     </div>
   </script>
@@ -172,7 +174,7 @@ googletag.cmd.push(function () {
 
     <div id="player__ranks" class="chart">
       <h5>Where Doncic ranks</h5>
-      <p class="chatter">Luka Doncic’s rank among all other qualified rookies in aggregate z-score:</p>
+      <p class="chatter">Luka Doncic’s rank among all other qualified rookies in <span class="traditional">traditional </span> <span class="advanced">advanced</span> stats:</p>
       <div class="chart__container"></div>
     </div>
 
@@ -191,9 +193,114 @@ googletag.cmd.push(function () {
       it won't self-destruct, but it is cleaner
     -->
 
+    <p>Doncic is positioned well to win rookie of the year this season, if history is any indication.</p>
+    <p>Of the last ten players to win rookie of the year, seven finished first in either or both of our traditional or advanced ranking system, and all finished in the top five in both. Only Derrick Rose (2008-09), Andrew Wiggins(2014-15) and Malcom Brogdon (2016-17) didn’t top their rookie classes in either of the two rankings.</p>
+    <p>Doncic currently leads in the traditional statical rankings and is second in the advanced rankings. And while rating in the top five against peers in our metric historically doesn’t guarantee taking home the rookie of the year award, it does put Doncic prominently in the conversation.</p>
+
+    <div id="past-roty">
+      <div class="past-player">
+        <p class="label">2008-09</p>
+        <h6>Derrick Rose</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td>3rd</td><td>-0.77</td></tr>
+          <tr><td>Adv.</td><td>5th</td><td>-1.09</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2009-10</p>
+        <h6>Tyreke Evans</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td class="rank_one">1st</td><td>0.62</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>2.34</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2010-11</p>
+        <h6>Blake Griffin</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td class="rank_one">1st</td><td>4.67</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>5.16</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2011-12</p>
+        <h6>Kyrie Irving</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td class="rank_one">1st</td><td>3.39</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>3.49</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2012-13</p>
+        <h6>Damian Lillard</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td class="rank_one">1st</td><td>2.37</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>5.79</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2013-14</p>
+        <h6>Michael Carter-Williams</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td class="rank_one">1st</td><td>4.67</td></tr>
+          <tr><td>Adv.</td><td>3rd</td><td>-3.93</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2014-15</p>
+        <h6>Andrew Wiggins</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td>3rd</td><td>-3.78</td></tr>
+          <tr><td>Adv.</td><td>5th</td><td>-5.51</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2015-16</p>
+        <h6>Karl-Anthony Towns</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td class="rank_one">1st</td><td>2.6</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>1.32</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2016-17</p>
+        <h6>Malcolm Brogdon</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td>2nd</td><td>-0.34</td></tr>
+          <tr><td>Adv.</td><td>2nd</td><td>-1.54</td></tr>
+        </table>
+      </div>
+      <div class="past-player">
+        <p class="label">2017-18</p>
+        <h6>Ben Simmons</h6>
+        <table>
+          <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
+          <tr><td>Trad.</td><td class="rank_one">1st</td><td>6.46</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>2.77</td></tr>
+        </table>
+      </div>
+
+
+    </div>
+
     <p>horse-race coverage copyboy the power of the press belongs to the person who owns one data visualization tweet Jeff Jarvis Patch Like button explainer, TechCrunch should isn't a business model copyright Romenesko WordPress Arianna Kindle Single Pictures of Goats section got drudged, gamification put the paper to bed the other longer Book Review The Work of Art in the Age of Mechanical Reproduction open newsroom Foursquare A.J. Liebling.</p>
 
     <p>Instagram Quora linkbait people formerly known as the audience bringing a tote bag to a knife fight YouTube RT syndicated the power of the press belongs to the person who owns one, Alberto Ibarguen The Work of Art in the Age of Mechanical Reproduction open newsroom The Weekender the medium is the message Dan Fleckner analog thinking future of context Instagram, David Foster Wallace reporting gutter Aron Pilhofer serendipity This Week in Review he said she said.</p>
+
+    <div id="all-roty">
+      <div id="all-roty__graphic" class="inline-block">
+
+      </div>
+    </div>
 
     <p class="twitter-tag">Follow writer name on Twitter at <a href="urlhere">@twittertag.</a></p>
 

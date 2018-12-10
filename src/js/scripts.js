@@ -6,12 +6,14 @@ import Handlebars from 'handlebars';
 import './furniture';
 
 import drawChart from './drawChart';
+import drawHistorical from './drawHistorical';
 import drawRank from './drawRank';
 
 $(document).ready(() => {
   // the location of our player data that's parsed from our python script
   const DATALOCATION = 'https://interactives.dallasnews.com/data-store/2018/nba-roty.json';
 
+  const MODE = 'advanced';
   // handlebars sourcing and templating
   const playerModSource = document.getElementById('player-mod').innerHTML;
   const playerModTemplate = Handlebars.compile(playerModSource);
@@ -31,6 +33,12 @@ $(document).ready(() => {
   // ***************************************************************************
 
   function formatData(data) {
+    if (MODE === 'traditional') {
+      data.players.sort((a, b) => b.total_stand_zscore - a.total_stand_zscore);
+    } else {
+      data.players.sort((a, b) => b.total_adv_zscore - a.total_adv_zscore);
+    }
+
     const formattedData = []; // placeholder for our formatted data
     data.metrics.forEach((metric) => {
       // for each metric in our data, create an object with the metric value and
@@ -60,7 +68,7 @@ $(document).ready(() => {
     for (let i = 0; i < 8; i += 1) {
       const playerMod = playerModTemplate(data.players[i]);
       playerModsContainer.innerHTML += playerMod;
-      drawChart(data, formattedData, data.players[i].player);
+      drawChart(data, formattedData, data.players[i].player, MODE);
       // if (data.players[i].player.player === 'Luka Doncic') {
       //   lukaTop5 = true;
       // }
@@ -81,7 +89,17 @@ $(document).ready(() => {
 
     // drawChart(data, formattedData);
 
-    drawRank(data, 'advanced');
+    drawRank(data, MODE);
+
+    if (MODE === 'traditional') {
+      $('.traditional').removeClass('no-show');
+      $('.advanced').addClass('no-show');
+    } else {
+      $('.traditional').addClass('no-show');
+      $('.advanced').removeClass('no-show');
+    }
+
+    drawHistorical(data);
   }
 
   // ***************************************************************************

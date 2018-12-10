@@ -32,7 +32,7 @@
 }
 
 .player {
-  text-align: center;
+  text-align: left;
   font-family: $sans;
   position: relative;
   &:after {
@@ -53,18 +53,22 @@
   h5 {
     font-weight: 700;
     margin-bottom: 0;
+    margin-left: 60px;
   }
   p {
     @include type(1.2rem, 1.5rem, 0);
+    margin-left: 60px;
   }
   img {
-    width: 100px;
-    height: 100px;
-    text-align: center;
+    width: 50px;
+    height: 50px;
+    float: left;
     border-radius: 50%;
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+
   }
 }
-
 
 .z-scores {
   margin-top: 1.2rem;
@@ -73,11 +77,8 @@
     height: 50px;
   }
 }
-.z-score__trad {
-  display: none;
-}
-.z-spine {
-  stroke: $black235;
+.z-spine, .zeroLine {
+  stroke: $black215;
   stroke-width: 1;
 }
 .line-label {
@@ -87,8 +88,9 @@
 
 #player__ranks {
   width: 100%;
+  max-width: 1200px;
   position: relative;
-  margin-bottom: 4.8rem;
+  margin: 0 auto 4.8rem;
 }
 
 .tooltip {
@@ -106,6 +108,92 @@
   p {
     @include type(1.2rem, 1.5rem, 0);
   }
+}
+
+.chart-label, .tick {
+  font-family: $sans;
+  font-size: 1.2rem;
+  fill: $black33;
+  line-height: 1.5rem;
+}
+
+.axis path {
+  stroke-width: 1;
+  stroke: $black215;
+}
+
+.tick {
+  line {
+    display: none;
+  }
+}
+
+.rookie-dot {
+  fill: $black215;
+  fill-opacity: .5;
+  stroke: rgb(175,175,175);
+  stroke-width: 1;
+}
+
+.roty-dot {
+  fill: $chartRed;
+  fill-opacity: .85;
+  stroke: darken($chartRed, 10);
+}
+.roty-2019 {
+  fill: $chartYellow;
+  stroke: darken($chartYellow, 10);
+}
+.roty-luka {
+  fill: $dmnblue;
+  fill-opacity: .85;
+  stroke: darken($dmnblue, 10);
+}
+
+#past-roty {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 2.4rem;
+  font-family: $sans;
+  p {
+    @include type(1.2rem, 1.5rem, .3rem);
+  }
+  h6 {
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+  table {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    tr {
+      border-bottom: 1px solid $black235;
+      &:first-of-type {
+        border-top: 1px solid $black235;
+      }
+    }
+    th, td {
+      padding: .3rem;
+      border-left: 1px solid $black235;
+      border-right: 1px solid $black235;
+    }
+    th {
+      font-weight: bold;
+      text-align: center;
+    }
+    td {
+      text-align: center;
+      &.rank_one {
+        background-color: lighten($chartGreen, 45);
+      }
+    }
+  }
+}
+
+.no-show {
+  display: none;
 }
   /*                         */
  /* Project-specific styles */

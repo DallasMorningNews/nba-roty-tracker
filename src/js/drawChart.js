@@ -1,6 +1,6 @@
 /* global d3:true */
 
-export default function (originalData, formattedData, name) {
+export default function (originalData, formattedData, name, metricFormat) {
   const playerElem = d3.select('.player').node();
   const svgWidth = playerElem.getBoundingClientRect().width;
   const svgHeight = 50;
@@ -46,6 +46,14 @@ export default function (originalData, formattedData, name) {
 
   formattedData.forEach((datum) => {
     x.domain(d3.extent(datum.values, d => d[1]));
+
+    const zeroLine = targetPlayer.select(`.z-score-${datum.metric}`).select('svg')
+      .append('line')
+      .attr('x1', x(0))
+      .attr('x2', x(0))
+      .attr('y1', svgHeight / 4)
+      .attr('y2', svgHeight - (svgHeight / 4))
+      .attr('class', 'zeroLine');
 
     const dots = targetPlayer.select(`.z-score-${datum.metric}`).select('svg')
       .selectAll('.dot')
