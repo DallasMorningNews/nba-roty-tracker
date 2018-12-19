@@ -25,7 +25,7 @@
 
 #player__mods {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -45,7 +45,7 @@
     top: 0;
     background-color: $black235;
   }
-  &:nth-of-type(4n+4) {
+  &:last-child {
     &:after {
       display: none;
     }
@@ -192,6 +192,34 @@
   }
 }
 
+
+#metric__flipper {
+  margin: 2.4rem auto;
+  text-align: center;
+  width: 300px;
+  button {
+    float: left;
+    &:hover {
+      background-color: darken($black235, 5);
+      color: $black33;
+    }
+    &:first-child {
+      border-right: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child {
+      border-left: none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &.active-button {
+      background-color: darken($dmnblue, 5);
+      border: 1px solid $dmnblue;
+      color: white;
+    }
+  }
+}
 .no-show {
   display: none;
 }

@@ -7,8 +7,6 @@ import allPastRookies from '../data/all_past_rookies.json';
 import figureMinMax from './figureMinMax';
 
 export default function () {
-  console.log(allPastRookies);
-
   const ROTY = [
     'Ben Simmons',
     'Malcolm Brogdon',

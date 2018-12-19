@@ -54,7 +54,7 @@
   <script id="player-mod" type="text/x-handlebars-template">
     <div class="player" data-playername="{{player}}">
       <img src="images/_{{imageName player}}.jpg" alt="{{player}}" />
-      <h5>{{player}}</h5>
+      <h5>{{breakName player}}</h5>
       <p>{{team}}</p>
       <p class="advanced"><span class="score-label">Advanced z-score: </span>{{roundScore total_adv_zscore}}</p>
       <p class="traditional"><span class="score-label">Traditional z-score: </span>{{roundScore total_stand_zscore}}</p>
@@ -152,14 +152,15 @@ googletag.cmd.push(function () {
 <section class="content-well clearfix">
 
 	<header id="story-head">
-		<h3>Label, if needed</h3>
-		<h1>Main Headline</h1>
-		<h2>Deck head goes in this spot here</h2>
+		<h3>NBA Rookie of the Year</h3>
+    <h2>What are Mavericks rookie Luka Doncic’s chances of taking home the Rookie of the Year award? By our math: </h2>
+		<h1 id="luka-answer"></h1>
+
 	</header>
 		<!-- end storyHead -->
 
     <div class="byline-block">
-        <p>By <a target="_blank" href="mailto:emailaddresshere">Writer Name</a> | Staff Writer</p>
+        <p>By <a target="_blank" href="mailto:emailaddresshere">John Hancock</a> | Editor, Data and Interactives</p>
         <p>Published Month Date, Year</p>
         <!-- <p>Updated Month, Date, Year</p> -->
     </div>
@@ -170,21 +171,30 @@ googletag.cmd.push(function () {
 	</div>
 	<!-- end shareComments -->
 
-    <p class="intro"><span class="dropcap">A</span>n opening paragraph goes here. I love the Weather & Opera section plagiarism Julian Assange syndicated process vs. product curmudgeon, attracting young readers cognitive surplus the audience knows more than I do discuss anonymity WikiLeaks hyperhyperlocal Arianna future scoop, Twitter topples dictators the medium is the message information overload natural-born blogger metered model Colbert bump Julian Assange CTR.</p>
+    <p>When it comes to Luka Doncic, there was never a doubt for the Dallas Mavericks.</p>
+    <p>The Mavericks front office had done years of research and scouting on the Slovenian teenager before shipping Trae Young and a protected first round pick in 2019 to Atlanta for Doncic in a <a href="https://sportsday.dallasnews.com/dallas-mavericks/mavericks/2018/06/29/mavericks-hawks-agree-deal-send-luka-doncic-dallas">draft-night trade</a>.</p>
+    <p>Team owner Cuban said getting Doncic in the draft was a <a href="https://sportsday.dallasnews.com/dallas-mavericks/mavericks/2018/12/15/no-brainer-luka-doncic-won-entire-mavericks-organization-long-before-drafted">"no-brainer,"</a> and ESPN analyst Mike Schmidt said Doncic was <a href="https://sportsday.dallasnews.com/dallas-mavericks/mavericks/2018/07/27/espn-analyst-mike-schmitz-says-mavs-got-nba-drafts-best-basketball-player-luka-doncic">"the best basketball player in the draft."</a></p>
+    <p>The talk is not all bluster either. Doncic's success is quickly justifying the team's enthusiasim and putting him squarely in the conversation for rookie of the year.</p>
+    <p>We rated this season's rookie class in a variety of statistics to determine Doncic's chances at taking home the award, along with who might be his competition.</p>
+    <p>Our metric takes into account not just where each player ranks in a given stat, but how much better — or worse — that player is than the average rookie in the class. Those ratings are then added together to create two scores, one for traditional stats, such as points, rebounds and assists per game, and one for advanced stats, such as winshares, usage percentage and player efficiency rating.</p>
+    <p>The result: Doncic and Phoenix's Deandre Ayton are the clear favorites for the award, followed closely by Memphis' Jaren Jackson.</p>
+    <p>See how Doncic stacks up to the rest of the competition below using either of our two scoring systems: </p>
+
+    <div id="metric__flipper" class="clearfix">
+      <button class="int-btn active-button">Traditional</button>
+      <button class="int-btn">Advanced</button>
+    </div>
 
     <div id="player__ranks" class="chart">
-      <h5>Where Doncic ranks</h5>
-      <p class="chatter">Luka Doncic’s rank among all other qualified rookies in <span class="traditional">traditional </span> <span class="advanced">advanced</span> stats:</p>
+      <h5>Where Doncic ranks among rookies</h5>
+      <p class="chatter">Luka Doncic’s <span class="traditional">traditional </span> <span class="advanced">advanced</span> metric score of <span id="rank__total-score">XX.X</span> ranks <span id="rank__rank">XXXXXX</span> among all other qualified rookies.</p>
       <div class="chart__container"></div>
     </div>
 
-    <p>column-inch trolls copyboy data visualization AOL afternoon paper shoot a photo attracting young readers, MinnPost but what's the business model Instagram fair use fourth estate morgue writing, The Work of Art in the Age of Mechanical Reproduction audience atomization overcome free as in beer Pictures of Goats section kitchen table of the future masthead.</p>
-
-
+      <p class="traditional">In terms of traditional statistics, Doncic has the best chance at taking home the best rookie award. He leads the class in scoring at <span class="smart-text__ppg" data-player="Luka Doncic"></span> points per game and fills a box score with <span class="smart-text__rbg"></span> rebounds, <span class="smart-text__apg"></span> assists and <span class="smart-text__spg"></span> steals per game and is the best player on a potential playoff team that finished in the bottom five last year.</p>
+      <p class="traditional">Doncic’s competition for the award can’t quite say the same. While Ayton is putting up numbers in points (<span class="smart-text__ppg" data-player="Deandre Ayton"></span>) and rebounds (<span class="smart-text__rbg" data-player="Deandre Ayton"></span>), the Suns are clearly in the tank. Meanwhile, Jackson plays for a winning team and is one of the better defensive players among the class, but his scoring (<span class="smart-text__ppg" data-player="Jaren Jackson"></span>) and rebounding (<span class="smart-text__rbg" data-player="Jaren Jackson"></span>) are not eye-opening.</p>
 
     <div id="player__mods"></div>
-
-
 
     {%include "adblock1.html" %}
 
@@ -192,10 +202,10 @@ googletag.cmd.push(function () {
       use the above include with adblock2.html and adblock3.html to place adblocks 2 and 3, then delete this comment.
       it won't self-destruct, but it is cleaner
     -->
-
-    <p>Doncic is positioned well to win rookie of the year this season, if history is any indication.</p>
-    <p>Of the last ten players to win rookie of the year, seven finished first in either or both of our traditional or advanced ranking system, and all finished in the top five in both. Only Derrick Rose (2008-09), Andrew Wiggins(2014-15) and Malcom Brogdon (2016-17) didn’t top their rookie classes in either of the two rankings.</p>
-    <p>Doncic currently leads in the traditional statical rankings and is second in the advanced rankings. And while rating in the top five against peers in our metric historically doesn’t guarantee taking home the rookie of the year award, it does put Doncic prominently in the conversation.</p>
+    <p class="subhead">History is on Doncic’s side</p>
+    <p>Of the last ten players to win rookie of the year, seven finished first in either or both of our traditional or advanced ranking system, and all finished in the top five in both. Only Derrick Rose (2008-09), Andrew Wiggins (2014-15) and Malcolm Brogdon (2016-17) didn’t top their rookie classes in at least one of the two rankings.</p>
+    <p>Doncic ticks that box though. The Mavericks rookie currently leads in the traditional statistical rankings and is third in the advanced rankings. And while rating in the top five against peers in our metric doesn’t guarantee taking home the rookie of the year award, Doncic’s statistical successes positions him prominently in the debate.</p>
+    <p>If the past ten seasons are any indication, Doncic is positioned well to win rookie of the year this season. But so are Ayton and Jackson, who both also rank in the top five in both.</p>
 
     <div id="past-roty">
       <div class="past-player">
@@ -292,9 +302,11 @@ googletag.cmd.push(function () {
 
     </div>
 
-    <p>horse-race coverage copyboy the power of the press belongs to the person who owns one data visualization tweet Jeff Jarvis Patch Like button explainer, TechCrunch should isn't a business model copyright Romenesko WordPress Arianna Kindle Single Pictures of Goats section got drudged, gamification put the paper to bed the other longer Book Review The Work of Art in the Age of Mechanical Reproduction open newsroom Foursquare A.J. Liebling.</p>
-
-    <p>Instagram Quora linkbait people formerly known as the audience bringing a tote bag to a knife fight YouTube RT syndicated the power of the press belongs to the person who owns one, Alberto Ibarguen The Work of Art in the Age of Mechanical Reproduction open newsroom The Weekender the medium is the message Dan Fleckner analog thinking future of context Instagram, David Foster Wallace reporting gutter Aron Pilhofer serendipity This Week in Review he said she said.</p>
+    <p class="subhead">Best in a decade?</p>
+    <p>The last 10 years have seen some prolific rookie campaigns, especially when it comes to the easy-on-the-eyes statistic of scoring. Doncic, who leads all rookies this season in points per game, ranks ninth among all rookies since 2008-09.</p>
+    <p>Going deeper, when we judge that pool of players using our metrics for traditional and advanced stats, Doncic still holds his own. </p>
+    <p>Rookie of the Year winners Kyrie Irving, Ben Simmons, Blake Griffin and Karl-Anthony Towns clearly outperform the group, but Doncic, Ayton and Jackson are having rookie seasons that put them among a second tier of players just below that upper echelon.</p>
+    <p>Doncic ranks 12th among the 235 qualifying players using our advanced metric, and 10th using our traditional. Ayton ranks ninth in both lists, while Jackson sits at eight and 17th. No other class has three players in the top 20 of each metric.</p>
 
     <div id="all-roty">
       <div id="all-roty__graphic" class="inline-block">

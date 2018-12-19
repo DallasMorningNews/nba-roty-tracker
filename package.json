@@ -30,6 +30,7 @@
     "gulp-watch": "^4.3.5",
     "handlebars": "^4.0.12",
     "imagemin-jpeg-recompress": "^4.3.0",
+    "journalize": "^2.1.0",
     "jquery": "^3.2.1",
     "merge-stream": "^1.0.0",
     "run-sequence": "^1.1.5",
