@@ -114,10 +114,10 @@ googletag.cmd.push(function () {
           build();
 
 
-  var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop")
-                  .defineSizeMapping(dfpSizeMapping)
-                  .setTargeting("position", "Top")
-                  .addService(googletag.pubads());
+  // var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop")
+  //                 .defineSizeMapping(dfpSizeMapping)
+  //                 .setTargeting("position", "Top")
+  //                 .addService(googletag.pubads());
 
   /*
   var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle")
@@ -176,7 +176,7 @@ googletag.cmd.push(function () {
     <p>Team owner Cuban said getting Doncic in the draft was a <a href="https://sportsday.dallasnews.com/dallas-mavericks/mavericks/2018/12/15/no-brainer-luka-doncic-won-entire-mavericks-organization-long-before-drafted">"no-brainer,"</a> and ESPN analyst Mike Schmidt said Doncic was <a href="https://sportsday.dallasnews.com/dallas-mavericks/mavericks/2018/07/27/espn-analyst-mike-schmitz-says-mavs-got-nba-drafts-best-basketball-player-luka-doncic">"the best basketball player in the draft."</a></p>
     <p>The talk is not all bluster either. Doncic's success is quickly justifying the team's enthusiasim and putting him squarely in the conversation for rookie of the year.</p>
     <p>We rated this season's rookie class in a variety of statistics to determine Doncic's chances at taking home the award, along with who might be his competition.</p>
-    <p>Our metric takes into account not just where each player ranks in a given stat, but how much better — or worse — that player is than the average rookie in the class. Those ratings are then added together to create two scores, one for traditional stats, such as points, rebounds and assists per game, and one for advanced stats, such as winshares, usage percentage and player efficiency rating.</p>
+    <p>Our metric takes into account not just where each player ranks in a given stat, but how much better — or worse — that player is than the average rookie in the class. Those ratings are comined to create two scores, one for traditional stats, such as points, rebounds and assists per game, and one for advanced metrics, such as winshares, usage percentage and player efficiency rating.</p>
     <p>The result: Doncic and Phoenix's Deandre Ayton are the clear favorites for the award, followed closely by Memphis' Jaren Jackson.</p>
     <p>See how Doncic stacks up to the rest of the competition below using either of our two scoring systems: </p>
 
@@ -191,10 +191,22 @@ googletag.cmd.push(function () {
       <div class="chart__container"></div>
     </div>
 
-      <p class="traditional">In terms of traditional statistics, Doncic has the best chance at taking home the best rookie award. He leads the class in scoring at <span class="smart-text__ppg" data-player="Luka Doncic"></span> points per game and fills a box score with <span class="smart-text__rbg"></span> rebounds, <span class="smart-text__apg"></span> assists and <span class="smart-text__spg"></span> steals per game and is the best player on a potential playoff team that finished in the bottom five last year.</p>
-      <p class="traditional">Doncic’s competition for the award can’t quite say the same. While Ayton is putting up numbers in points (<span class="smart-text__ppg" data-player="Deandre Ayton"></span>) and rebounds (<span class="smart-text__rbg" data-player="Deandre Ayton"></span>), the Suns are clearly in the tank. Meanwhile, Jackson plays for a winning team and is one of the better defensive players among the class, but his scoring (<span class="smart-text__ppg" data-player="Jaren Jackson"></span>) and rebounding (<span class="smart-text__rbg" data-player="Jaren Jackson"></span>) are not eye-opening.</p>
+      <p class="subhead">1. He's putting up the numbers</p>
+      <div class="traditional">
+        <p>Relative to the rest of the 2018-19 rookie class, Doncic’s ability to fill up a box score on a nightly basis is fueling rookie of the year speculation for the first-year Maverick.</p>
+        <p>Doncic leads the class in scoring at <span class="smart-text__ppg" data-player="Luka Doncic"></span> points per game and ranks in the top three in per-game rates for rebounds (<span class="smart-text__rbg" data-player="Luka Doncic"></span>), assists (<span class="smart-text__apg" data-player="Luka Doncic"></span>) and steals (<span class="smart-text__spg" data-player="Luka Doncic"></span>)</p>.
+        <p>Doncic’s success isn’t just among his fellow rookies. He leads the Mavericks in points and minutes per game on a squad that includes established veterans in Harrison Barnes and DeAndre Jordan, along with last year’s lottery pick Dennis Smith Jr.</p>
+        <p>Doncic’s competition for the award can’t quite say the same. While Ayton is putting up numbers in points (<span class="smart-text__ppg" data-player="Deandre Ayton"></span>) and rebounds (<span class="smart-text__rbg" data-player="Deandre Ayton"></span>), the Suns are clearly in the tank. Meanwhile, Jackson is one of the better defensive players among the class, but his scoring (<span class="smart-text__ppg" data-player="Jaren Jackson"></span>) and rebounding (<span class="smart-text__rbg" data-player="Jaren Jackson"></span>) are not eye-opening.</p>
+      </div>
 
-    <div id="player__mods"></div>
+      <div class="advanced">
+        <p>While Doncic outshines the class in more familiar, traditional box score statistics, he's still a standout when the rookies are measured in a sample of the NBA’s advanced metrics. However, just as in our traditional scoring, the real competition is Ayton.</p>
+        <p>Ayton leads all rookies in winshare and player efficiency rating by healthy margins, giving him more than a point advantage over Doncic in our advanced scoring metric.</p>
+        <p>The Maverics roster boasts more overall talent than the Suns though, leading to win shares being more evenly distributed across the roster. And it's no surprise that Ayton outshines Doncic in player efficiency. As a back-to-the-basket center, the majority of Ayton’s shots come from within 10 feet of the basket, leading to a higher field goal percentage. He also handles the ball less than Doncic, resulting in fewer turnovers.</p>
+        <p>Doncic holds his own though, especially in terms of how much he plays and how often he's involved while he's on the floor. He leads all rookies in minutes per game (<span class="smart-text__mpg" data-player="Luka Doncic"></span>) and is in the top five of usage percentage (<span class="smart-text__usg" data-player="Luka Doncic"></span>), which measures the percentage of plays a player is involved in on offense.</p>
+
+      </div>
+    <div id="player__mods" class="chart"></div>
 
     {%include "adblock1.html" %}
 
@@ -202,19 +214,19 @@ googletag.cmd.push(function () {
       use the above include with adblock2.html and adblock3.html to place adblocks 2 and 3, then delete this comment.
       it won't self-destruct, but it is cleaner
     -->
-    <p class="subhead">History is on Doncic’s side</p>
-    <p>Of the last ten players to win rookie of the year, seven finished first in either or both of our traditional or advanced ranking system, and all finished in the top five in both. Only Derrick Rose (2008-09), Andrew Wiggins (2014-15) and Malcolm Brogdon (2016-17) didn’t top their rookie classes in at least one of the two rankings.</p>
-    <p>Doncic ticks that box though. The Mavericks rookie currently leads in the traditional statistical rankings and is third in the advanced rankings. And while rating in the top five against peers in our metric doesn’t guarantee taking home the rookie of the year award, Doncic’s statistical successes positions him prominently in the debate.</p>
-    <p>If the past ten seasons are any indication, Doncic is positioned well to win rookie of the year this season. But so are Ayton and Jackson, who both also rank in the top five in both.</p>
+    <p class="subhead">2. History is on his side</p>
+    <p>Of the last ten players to win rookie of the year, nine finished first in either or both of our traditional or advanced scoring systems, and all finished in the top four in both. Only Andrew Wiggins (2014-15) didn’t top his rookie classes in at least one of the two rankings.</p>
+    <p>Doncic passes that test, though. He leads all rookies in our traditional metric and is second our advanced behind the Suns’ Ayton. If recent winners are any indication, they both check a very important box </p>
+    <p>But what made Wiggins so special so as to take home the award while not topping either of our two metrics? He led all rookies in scoring, and it wasn't close. He scored 554 points more than Nikola Mirotic. And if there's a legit debate between Doncic and Ayton for rookie of the year that would require a figurative tie-breaker, the Mavericks rookie holds that scoring trump card.</p>
 
-    <div id="past-roty">
+    <div id="past-roty" class="chart">
       <div class="past-player">
         <p class="label">2008-09</p>
         <h6>Derrick Rose</h6>
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td>3rd</td><td>-0.77</td></tr>
-          <tr><td>Adv.</td><td>5th</td><td>-1.09</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>0.02</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -223,7 +235,7 @@ googletag.cmd.push(function () {
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td class="rank_one">1st</td><td>0.62</td></tr>
-          <tr><td>Adv.</td><td class="rank_one">1st</td><td>2.34</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>2.85</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -232,7 +244,7 @@ googletag.cmd.push(function () {
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td class="rank_one">1st</td><td>4.67</td></tr>
-          <tr><td>Adv.</td><td class="rank_one">1st</td><td>5.16</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>6.32</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -241,7 +253,7 @@ googletag.cmd.push(function () {
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td class="rank_one">1st</td><td>3.39</td></tr>
-          <tr><td>Adv.</td><td class="rank_one">1st</td><td>3.49</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>4.63</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -250,7 +262,7 @@ googletag.cmd.push(function () {
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td class="rank_one">1st</td><td>2.37</td></tr>
-          <tr><td>Adv.</td><td class="rank_one">1st</td><td>5.79</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>8.76</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -259,7 +271,7 @@ googletag.cmd.push(function () {
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td class="rank_one">1st</td><td>4.67</td></tr>
-          <tr><td>Adv.</td><td>3rd</td><td>-3.93</td></tr>
+          <tr><td>Adv.</td><td>2nd</td><td>-1.46</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -268,7 +280,7 @@ googletag.cmd.push(function () {
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td>3rd</td><td>-3.78</td></tr>
-          <tr><td>Adv.</td><td>5th</td><td>-5.51</td></tr>
+          <tr><td>Adv.</td><td>4th</td><td>-2.75</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -276,8 +288,8 @@ googletag.cmd.push(function () {
         <h6>Karl-Anthony Towns</h6>
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-          <tr><td>Trad.</td><td class="rank_one">1st</td><td>2.6</td></tr>
-          <tr><td>Adv.</td><td class="rank_one">1st</td><td>1.32</td></tr>
+          <tr><td>Trad.</td><td class="rank_one">1st</td><td>2.60</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>3.13</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -286,7 +298,7 @@ googletag.cmd.push(function () {
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td>2nd</td><td>-0.34</td></tr>
-          <tr><td>Adv.</td><td>2nd</td><td>-1.54</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>0.29</td></tr>
         </table>
       </div>
       <div class="past-player">
@@ -295,20 +307,21 @@ googletag.cmd.push(function () {
         <table>
           <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
           <tr><td>Trad.</td><td class="rank_one">1st</td><td>6.46</td></tr>
-          <tr><td>Adv.</td><td class="rank_one">1st</td><td>2.77</td></tr>
+          <tr><td>Adv.</td><td class="rank_one">1st</td><td>2.81</td></tr>
         </table>
       </div>
 
 
     </div>
 
-    <p class="subhead">Best in a decade?</p>
-    <p>The last 10 years have seen some prolific rookie campaigns, especially when it comes to the easy-on-the-eyes statistic of scoring. Doncic, who leads all rookies this season in points per game, ranks ninth among all rookies since 2008-09.</p>
-    <p>Going deeper, when we judge that pool of players using our metrics for traditional and advanced stats, Doncic still holds his own. </p>
-    <p>Rookie of the Year winners Kyrie Irving, Ben Simmons, Blake Griffin and Karl-Anthony Towns clearly outperform the group, but Doncic, Ayton and Jackson are having rookie seasons that put them among a second tier of players just below that upper echelon.</p>
-    <p>Doncic ranks 12th among the 235 qualifying players using our advanced metric, and 10th using our traditional. Ayton ranks ninth in both lists, while Jackson sits at eight and 17th. No other class has three players in the top 20 of each metric.</p>
+    <p class="subhead">3. He's one of the best rookies of the past decade</p>
+    <p>The last 10 years have seen some prolific rookie campaigns, especially when it comes to the easy-on-the-eyes statistic of scoring. Doncic's year is no exception.
+    <p>Doncic’s current points per game total of <span class="smart-text__ppg" data-player="Luka Doncic">18.4</span> is eighth best among all rookies in the last ten years. That's better than six of the past ten rookie of the year winners.</p>
+    <p>Going deeper, when we judge that pool of players using our metrics for traditional and advanced stats, Doncic still holds his own.</p>
+    <p>Rookie of the Year winners Ben Simmons, Blake Griffin, Tyreke Evans and Karl-Anthony Towns clearly outperform the group of 234 players, but Doncic, Ayton and, to a lesser extent, Jackson are having rookie seasons that put them among a second tier of players just below that upper echelon.</p>
+    <p>Doncic ranks 18th among the qualifying players using our advanced metric, and eigth using our traditional. Ayton is 13th in the advanced rankings and 10th in the traditional. Those rankings place both rookies in the top 10 percentile of both metrics.</p>
 
-    <div id="all-roty">
+    <div id="all-roty" class="chart">
       <div id="all-roty__graphic" class="inline-block">
 
       </div>

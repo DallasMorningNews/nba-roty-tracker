@@ -12,6 +12,7 @@
 
 .chart {
   font-family: $sans;
+  margin: 4.8rem auto;
   .chatter {
     @include type(1.4rem, 1.8rem, 1.2rem);
   }
@@ -28,7 +29,6 @@
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 40px;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 .player {
@@ -222,6 +222,13 @@
 }
 .no-show {
   display: none;
+}
+
+.traditional p, .advanced p {
+  @include type(1.7rem, 2.4rem, 2.4rem);
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto 2.4rem;
 }
   /*                         */
  /* Project-specific styles */

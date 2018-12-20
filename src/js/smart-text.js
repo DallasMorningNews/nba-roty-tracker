@@ -61,6 +61,8 @@ function updateSmartText(data, playerName) {
   $(`.smart-text__rbg[data-player='${playerName}']`).text(thisPlayer.metrics.rpg);
   $(`.smart-text__apg[data-player='${playerName}']`).text(thisPlayer.metrics.apg);
   $(`.smart-text__spg[data-player='${playerName}']`).text(thisPlayer.metrics.spg);
+  $(`.smart-text__usg[data-player='${playerName}']`).text(thisPlayer.metrics.usg);
+  $(`.smart-text__mpg[data-player='${playerName}']`).text(thisPlayer.metrics.mpg);
 }
 
 export default { headline, updateSmartText };

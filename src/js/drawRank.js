@@ -31,7 +31,7 @@ export default function (data, metric) {
 
   // setting variables for it's height and width
   const svgWidth = rankElem.clientWidth;
-  const svgHeight = 60;
+  const svgHeight = 20;
 
   // defining a variable for our dot radius
   const dotRadius = 8;
@@ -47,7 +47,7 @@ export default function (data, metric) {
   if (metric === 'traditional') {
     x.domain(d3.extent(playerRanks, d => d[1]));
   } else if (metric === 'advanced') {
-    x.domain(d3.extend(playerRanks, d => d[2]));
+    x.domain(d3.extent(playerRanks, d => d[2]));
   }
 
   // creating our svg element
