@@ -43,9 +43,9 @@ function headline(data) {
   // supply an answer to the question of will luka win rookie of the year based
   // on his position within the two lists
   if (topCount === 2) {
-    return 'Definitely';
+    return 'Absolutely';
   } else if (topCount === 1 && topFiveCount === 2) {
-    return 'Very likely';
+    return 'Yes';
   } else if (topCount === 0 && topFiveCount === 2) {
     return 'He’s got a chance';
   } else if (topCount === 1 && topFiveCount === 1) {

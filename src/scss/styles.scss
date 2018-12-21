@@ -10,6 +10,30 @@
 @import 'header';
 @import 'footer';
 
+#content-header {
+  padding-top: 4.8rem;
+  text-align: center;
+  font-family: $serif;
+  h2 {
+    letter-spacing: -.5px;
+  }
+  img {
+    max-width: 800px;
+    margin: 0 auto -30rem;
+  }
+}
+
+#story-head {
+  h1 {
+    font-family: $sans;
+    text-transform: uppercase;
+    font-weight: 700;
+    @include type(20rem, 10rem, 4.8rem);
+    color: $black33;
+    letter-spacing: -10px;
+  }
+}
+
 .chart {
   font-family: $sans;
   margin: 4.8rem auto;
