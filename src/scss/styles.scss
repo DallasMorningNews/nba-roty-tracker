@@ -11,29 +11,30 @@
   padding-top: 4.8rem;
   text-align: center;
   font-family: $serif;
-  h2 {
-    letter-spacing: -.5px;
-  }
   img {
     max-width: 800px;
-    margin: 0 auto -30rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(46,68,106, .25);
   }
 }
 
 #story-head {
+  font-family: $sans;
+  font-weight: 900;
   h1 {
-    font-family: $sans;
     text-transform: uppercase;
-    font-weight: 700;
-    @include type(20rem, 10rem, 4.8rem);
-    color: $black33;
-    letter-spacing: -10px;
+    letter-spacing: -2px;
+  }
+  h2 {
+    letter-spacing: -.5px;
+    font-family: $sans;
+    font-weight: 900;
   }
 }
 
 .chart {
   font-family: $sans;
-  margin: 4.8rem auto;
+  margin: 6rem auto;
   .chatter {
     @include type(1.4rem, 1.8rem, 1.2rem);
   }
