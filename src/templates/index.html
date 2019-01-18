@@ -174,16 +174,29 @@ googletag.cmd.push(function () {
     <p>But is Doncic the NBA Rookie of the Year? A Dallas Morning News analysis rated this season's rookie class in a variety of metrics — traditional and advanced — to determine his chances at taking home the award.</p>
     <p>The result: Doncic is clear the favorite for the award, followed closely by Phoenix's Deandre Ayton. See where Doncic gains an edge over Ayton and how he stacks up against the rest of the class below using either of our two scoring systems: </p>
 
-    <div id="metric__flipper" class="clearfix">
-      <button class="int-btn active-button">Traditional</button>
-      <button class="int-btn">Advanced</button>
-    </div>
+
 
     <div id="player__ranks" class="chart">
       <h5>Where Doncic ranks among rookies</h5>
-      <p class="chatter">Luka Doncic’s <span class="traditional">traditional </span> <span class="advanced">advanced</span> metric score of <span id="rank__total-score">XX.X</span> ranks <span id="rank__rank">XXXXXX</span> among all other qualified rookies.</p>
+      <div class="chatter">
+      <p>The breakdown of the 2018-19 rookie class by our <span class="traditional">traditional</span> <span class="advanced">advanced</span> metric score, from worst to best (left to right). <span class="key-label">Luka Doncic’s</span> <span class="traditional">traditional </span> <span class="advanced">advanced</span> metric score of <span id="rank__total-score"></span> ranks <span id="rank__rank"></span> among all rookies who qualify for the NBA’s points per game leaderboard (minimum 58 games played or on pace for 58 games played).</p>
+        <div class="metric__flipper" class="clearfix">
+          <span>Traditional</span>
+          <div class="flipper__slider">
+            <button class="flipper__traditional"></button>
+          </div>
+          <span>Advanced</span>
+          <!-- <button class="int-btn active-button">Traditional</button>
+          <button class="int-btn">Advanced</button> -->
+        </div>
+      </div>
       <div class="chart__container"></div>
     </div>
+
+    <!-- <div class="metric__flipper" class="clearfix">
+      <button class="int-btn active-button">Traditional</button>
+      <button class="int-btn">Advanced</button>
+    </div> -->
 
       <p class="subhead">1. He's putting up the numbers</p>
       <div class="traditional">

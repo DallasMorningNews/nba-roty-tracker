@@ -3,6 +3,7 @@ import journalize from 'journalize';
 import apOrdinal from './ap-ordinal';
 
 export default function (data, metric) {
+  console.log('ranks', data, metric);
   let mode = metric; // defining whether we're looking at traditional or advanced metrics
   let playerRanks = []; // empty array to hold our players
 
@@ -112,7 +113,8 @@ export default function (data, metric) {
     .data(playerRanks)
     .enter()
     .append('circle')
-    .attr('class', 'rank-circle')
+    .attr('class', 'rank-circle roty-2019')
+    .classed('roty-luka', d => d[0] === 'Luka Doncic')
     .attr('r', dotRadius)
     .attr('cx', (d) => {
       if (metric === 'traditional') {
@@ -120,22 +122,7 @@ export default function (data, metric) {
       } return x(d[2]);
     })
     .attr('cy', dotRadius + 2)
-    .attr('stroke', (d) => {
-      if (d[0] === name) {
-        return '#329ce8';
-      } return 'rgb(175,175,175)';
-    })
-    .attr('stroke-width', 1)
-    .style('fill', (d) => {
-      if (d[0] === 'Luka Doncic') {
-        return '#329ce8';
-      } return 'rgb(215,215,215)';
-    })
-    .style('opacity', (d) => {
-      if (d[0] === 'Luka Doncic') {
-        return 1;
-      } return 0.5;
-    })
+    .style('opacity', 0.75)
     .on('mouseover', tipMouseover)
     .on('mouseout', tipMouseout);
 

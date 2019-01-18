@@ -36,7 +36,7 @@
   font-family: $sans;
   margin: 6rem auto;
   .chatter {
-    @include type(1.4rem, 1.8rem, 1.2rem);
+    @include type(1.4rem, 1.8rem, 2.4rem);
   }
   h5 {
     font-weight: bold;
@@ -113,6 +113,29 @@
   max-width: 1200px;
   position: relative;
   margin: 0 auto 4.8rem;
+  .tooltip {
+    p {
+      display: inline-block;
+      &:first-of-type {
+        display: block;
+      }
+      &:last-of-type {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.key-label {
+  background-color: $chartBlue;
+  color: white;
+  padding: 0 3px;
+  font-weight: bold;
+  border-radius: 2px;
+}
+#rank__total-score {
+  font-weight: 700;
+  border-bottom: 1px solid $black33;
 }
 
 .tooltip {
@@ -214,34 +237,70 @@
   }
 }
 
-
-#metric__flipper {
-  margin: 2.4rem auto;
-  text-align: center;
-  width: 300px;
+.metric__flipper {
+  display: inline-block;
+  .flipper__slider {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: $chartBlue;
+    border-radius: 20px;
+    position: relative;
+    margin: 0 5px;
+  }
   button {
-    float: left;
-    &:hover {
-      background-color: darken($black235, 5);
-      color: $black33;
-    }
-    &:first-child {
-      border-right: none;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-    &:last-child {
-      border-left: none;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    &.active-button {
-      background-color: darken($dmnblue, 5);
-      border: 1px solid $dmnblue;
-      color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include transition(all, .1s, ease-out);
+    &.flipper__advanced {
+      left: calc(100% - 20px);
     }
   }
+  span {
+    @include type(1.2rem, 20px, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    float: left;
+  }
+  span:first-of-type {
+    text-align: right;
+  }
+  span:last-of-type {
+    float: right;
+  }
 }
+
+// .metric__flipper {
+//   margin: 2.4rem auto;
+//   text-align: center;
+//   width: 300px;
+//   button {
+//     float: left;
+//     &:hover {
+//       background-color: darken($black235, 5);
+//       color: $black33;
+//     }
+//     &:first-child {
+//       border-right: none;
+//       border-top-right-radius: 0;
+//       border-bottom-right-radius: 0;
+//     }
+//     &:last-child {
+//       border-left: none;
+//       border-top-left-radius: 0;
+//       border-bottom-left-radius: 0;
+//     }
+//     &.active-button {
+//       background-color: darken($dmnblue, 5);
+//       border: 1px solid $dmnblue;
+//       color: white;
+//     }
+//   }
+// }
 .no-show {
   display: none;
 }
