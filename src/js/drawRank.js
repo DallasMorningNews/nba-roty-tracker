@@ -2,6 +2,7 @@
 import journalize from 'journalize';
 import apOrdinal from './ap-ordinal';
 
+
 export default function (data, metric) {
   console.log('ranks', data, metric);
   let mode = metric; // defining whether we're looking at traditional or advanced metrics
@@ -214,9 +215,10 @@ export default function (data, metric) {
   updateChatter();
 
   // listens for when the metric flipper is interacted with
-  d3.selectAll('#metric__flipper button').on('click', function () {
+  d3.selectAll('.metric__flipper button').on('click', function () {
+    console.log('test flipper');
     // sets a new mode based on which metric button was pushed
-    mode = d3.select(this).text().toLowerCase();
+    mode = d3.select(this).class().split('__')[1];
     // animates the data and updates the chatter
     animateData();
     updateChatter();
