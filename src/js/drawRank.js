@@ -84,7 +84,7 @@ export default function (data, metric) {
     tooltip.html(html)
       .transition()
         .duration(200)
-        .style('opacity', 0.9);
+        .style('opacity', 1);
 
     // getting the left and top position of the circle interacted with so we can
     // place our tooltip correctly
@@ -217,8 +217,11 @@ export default function (data, metric) {
   // listens for when the metric flipper is interacted with
   d3.selectAll('.metric__flipper button').on('click', function () {
     console.log('test flipper');
+    d3.select(this).classed('flipper__traditional', !d3.select(this).classed('flipper__traditional'));
+    d3.select(this).classed('flipper__advanced', !d3.select(this).classed('flipper__advanced'));
     // sets a new mode based on which metric button was pushed
-    mode = d3.select(this).class().split('__')[1];
+    mode = d3.select(this).attr('class').split('__')[1];
+    console.log(mode);
     // animates the data and updates the chatter
     animateData();
     updateChatter();

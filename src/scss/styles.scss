@@ -34,12 +34,27 @@
 
 .chart {
   font-family: $sans;
-  margin: 6rem auto;
+  margin: 6rem auto !important;
+  max-width: 1200px;
   .chatter {
     @include type(1.4rem, 1.8rem, 2.4rem);
+    p {
+      margin-bottom: 1.2rem;
+      strong {
+        text-transform: uppercase;
+      }
+    }
   }
   h5 {
     font-weight: bold;
+  }
+}
+
+.source {
+  margin-top: 1.2rem;
+  @include type(1.2rem, 1.5rem, 0);
+  a:visited {
+    color: $dmnblue;
   }
 }
 .chart__container {
@@ -114,6 +129,9 @@
   position: relative;
   margin: 0 auto 4.8rem;
   .tooltip {
+    box-shadow: 2px 2px 4px rgba(33,33,33,.15);
+    border: 1px solid $black215;
+    z-index: 10;
     p {
       display: inline-block;
       &:first-of-type {
@@ -132,6 +150,7 @@
   padding: 0 3px;
   font-weight: bold;
   border-radius: 2px;
+  display: inline-block;
 }
 #rank__total-score {
   font-weight: 700;
@@ -195,7 +214,7 @@
   stroke: darken($dmnblue, 10);
 }
 
-#past-roty {
+#past-roty__chart {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 20px;
@@ -237,6 +256,42 @@
   }
 }
 
+#all-roty {
+  max-width: 650px;
+}
+
+.key {
+  li {
+    display: inline-block;
+    margin-right: 10px;
+    @include type(1.2rem, 1.5rem, 1.5rem);
+    &:before {
+      @include psuedoElement(.9rem, .9rem, relative);
+      margin-right: 2px;
+      background-color: $black215;
+      display: inline-block;
+      border-radius: 50%;
+      top: 1px;
+    }
+    &.key--luka:before {
+      background-color: rgba($chartBlue, .85);
+      border: 1px solid #0165a0;
+    }
+    &.key--2018:before {
+      background-color: rgba(254, 196, 79, .85);
+      border: 1px solid rgb(254, 179, 2);
+    }
+    &.key--roty:before {
+      background-color: rgba(227, 78, 54, .85);
+      border: 1px solid rgb(202, 52, 28);
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+
 .metric__flipper {
   display: inline-block;
   .flipper__slider {
@@ -274,33 +329,6 @@
   }
 }
 
-// .metric__flipper {
-//   margin: 2.4rem auto;
-//   text-align: center;
-//   width: 300px;
-//   button {
-//     float: left;
-//     &:hover {
-//       background-color: darken($black235, 5);
-//       color: $black33;
-//     }
-//     &:first-child {
-//       border-right: none;
-//       border-top-right-radius: 0;
-//       border-bottom-right-radius: 0;
-//     }
-//     &:last-child {
-//       border-left: none;
-//       border-top-left-radius: 0;
-//       border-bottom-left-radius: 0;
-//     }
-//     &.active-button {
-//       background-color: darken($dmnblue, 5);
-//       border: 1px solid $dmnblue;
-//       color: white;
-//     }
-//   }
-// }
 .no-show {
   display: none;
 }
@@ -310,6 +338,15 @@
   width: 90%;
   max-width: 650px;
   margin: 0 auto 2.4rem;
+}
+
+.meth__block {
+  font-family: $sans;
+  max-width: 650px;
+  margin: 0 auto;
+  p {
+    @include type(1.4rem, 1.8rem, 1.8rem);
+  }
 }
   /*                         */
  /* Project-specific styles */
