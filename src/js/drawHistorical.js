@@ -6,6 +6,8 @@ import allPastRookies from '../data/all_past_rookies.json';
 
 import figureMinMax from './figureMinMax';
 
+$('.rookie_count').text(allPastRookies.length - 1);
+
 export default function () {
   const ROTY = [
     'Ben Simmons',

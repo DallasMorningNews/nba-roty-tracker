@@ -67,19 +67,23 @@ export default function (originalData, formattedData, name, metricFormat) {
           })
           .attr('cy', svgHeight / 2)
           .attr('stroke', (d) => {
-            if (d[0] === name) {
-              return '#329ce8';
+            if (d[0] === name && d[0] === 'Luka Doncic') {
+              return '#0165a0';
+            } else if (d[0] === name) {
+              return '#feb31c';
             } return 'rgb(175,175,175)';
           })
           .attr('stroke-width', 1)
           .style('fill', (d) => {
-            if (d[0] === name) {
+            if (d[0] === name && d[0] === 'Luka Doncic') {
               return '#329ce8';
+            } else if (d[0] === name) {
+              return '#fec44f';
             } return 'rgb(215,215,215)';
           })
           .style('opacity', (d) => {
             if (d[0] === name) {
-              return 1;
+              return 0.85;
             } return 0.5;
           });
   });

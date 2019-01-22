@@ -81,10 +81,10 @@ $(document).ready(() => {
 
   // adding controls to toggle the metric chosen
   function metricSwitcher(data) {
-    $('#metric__flipper button').click(function () {
-      $('#metric__flipper button').removeClass('active-button'); // remove the active class from the buttons
-      mode = $(this).text().toLowerCase(); // update the mode
-      $(this).addClass('active-button'); // add the active class to the button clicked
+    $('.metric__flipper button').click(function () {
+      // $('.metric__flipper button').toggleClass('flipper__traditional flipper__advanced');
+      mode = $(this).attr('class').split('__')[1]; // update the mode
+      console.log(mode);
       drawTopFive(data, FORMATTED_DATA); // redraw the top five
       metricDisplay(mode); // show/hide appropriate elements
     });
@@ -123,6 +123,7 @@ $(document).ready(() => {
     smartText.updateSmartText(data, 'Luka Doncic');
     smartText.updateSmartText(data, 'Deandre Ayton');
     smartText.updateSmartText(data, 'Jaren Jackson');
+    smartText.updateDifferences(data, 'total_stand_zscore', 'Luka Doncic', 'Deandre Ayton');
     drawRank(data, mode); // draws the ranking chart
     drawTopFive(data, FORMATTED_DATA); // draws the top five chart
     metricDisplay(); // shows which ever metric matches our mode
