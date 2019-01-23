@@ -83,8 +83,9 @@ $(document).ready(() => {
 
   // adding controls to toggle the metric chosen
   function metricSwitcher(data) {
-    $('.metric__flipper button').click(function () {
-      $('.metric__flipper button').toggleClass('flipper__traditional flipper__advanced');
+    $('.metric__flipper button').on('click', function () {
+      // $('.metric__flipper button').toggleClass('flipper__traditional flipper__advanced');
+      console.log('getting mode');
       mode = $(this).attr('class').split('__')[1]; // update the mode
       drawTopSix(data, FORMATTED_DATA); // redraw the top five
       metricDisplay(mode); // show/hide appropriate elements
@@ -149,6 +150,8 @@ $(document).ready(() => {
           drawWinners();
           drawTopSix(data, FORMATTED_DATA);
           metricDisplay();
+          $('.metric__flipper button').off('click');
+          metricSwitcher(data);
           windowWidth = newWidth;
         }
       }, 250);

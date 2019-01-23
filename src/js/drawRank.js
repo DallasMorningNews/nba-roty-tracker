@@ -215,8 +215,9 @@ export default function (data, metric) {
 
   // listens for when the metric flipper is interacted with
   d3.selectAll('.metric__flipper button').on('click', function () {
-    // d3.select(this).classed('flipper__traditional', !d3.select(this).classed('flipper__traditional'));
-    // d3.select(this).classed('flipper__advanced', !d3.select(this).classed('flipper__advanced'));
+    console.log('changing mode');
+    d3.select(this).classed('flipper__traditional', !d3.select(this).classed('flipper__traditional'));
+    d3.select(this).classed('flipper__advanced', !d3.select(this).classed('flipper__advanced'));
     // sets a new mode based on which metric button was pushed
     thisMode = d3.select(this).attr('class').split('__')[1];
     // animates the data and updates the chatter
