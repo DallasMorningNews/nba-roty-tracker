@@ -4,8 +4,7 @@ import apOrdinal from './ap-ordinal';
 
 
 export default function (data, metric) {
-  console.log('ranks', data, metric);
-  let mode = metric; // defining whether we're looking at traditional or advanced metrics
+  let thisMode = metric; // defining whether we're looking at traditional or advanced metrics
   let playerRanks = []; // empty array to hold our players
 
   // mapping arrays for each player to our playerRanks array
@@ -76,9 +75,9 @@ export default function (data, metric) {
     // setting the content of the tooltip dependent on the player circle interacted
     // with and the metric selected, then displaying that tooltip
     let html = `<h6>${d[0]}</h6><p>${d[3]}</p><p><strong>Games: </strong>${d[4]}`;
-    if (mode === 'traditional') {
+    if (thisMode === 'traditional') {
       html += `<p><strong> <span class="advanced">Score: </strong>${d[1].toFixed(2)}</p>`;
-    } else if (mode === 'advanced') {
+    } else if (thisMode === 'advanced') {
       html += `<p><strong> <span class="advanced">Score: </strong>${d[2].toFixed(2)}</p>`;
     }
     tooltip.html(html)
@@ -135,9 +134,9 @@ export default function (data, metric) {
   // already attached to the circles
   function animateData() {
     // reset the domain of the chart based on the metric selected
-    if (mode === 'traditional') {
+    if (thisMode === 'traditional') {
       x.domain(d3.extent(playerRanks, d => d[1]));
-    } else if (mode === 'advanced') {
+    } else if (thisMode === 'advanced') {
       x.domain(d3.extent(playerRanks, d => d[2]));
     }
 
@@ -147,7 +146,7 @@ export default function (data, metric) {
       .transition()
       .duration(1000)
       .attr('cx', (d) => {
-        if (mode === 'traditional') {
+        if (thisMode === 'traditional') {
           return x(d[1]);
         } return x(d[2]);
       });
@@ -173,8 +172,8 @@ export default function (data, metric) {
     // of our original data, as that will jack up where players fall when animated
     let sortableData = players.slice(0);
 
-    // sort based on mode
-    if (mode === 'traditional') {
+    // sort based on thisMode
+    if (thisMode === 'traditional') {
       sortableData = sortPlayers(sortableData, 1);
     } else {
       sortableData = sortPlayers(sortableData, 2);
@@ -202,7 +201,7 @@ export default function (data, metric) {
 
     // update the score in the chatter text based on metric/mode
     d3.select('#rank__total-score').text(() => {
-      if (mode === 'traditional') {
+      if (thisMode === 'traditional') {
         return ourPlayer.tradScore.toFixed(2);
       } return ourPlayer.advScore.toFixed(2);
     });
@@ -216,12 +215,10 @@ export default function (data, metric) {
 
   // listens for when the metric flipper is interacted with
   d3.selectAll('.metric__flipper button').on('click', function () {
-    console.log('test flipper');
-    d3.select(this).classed('flipper__traditional', !d3.select(this).classed('flipper__traditional'));
-    d3.select(this).classed('flipper__advanced', !d3.select(this).classed('flipper__advanced'));
+    // d3.select(this).classed('flipper__traditional', !d3.select(this).classed('flipper__traditional'));
+    // d3.select(this).classed('flipper__advanced', !d3.select(this).classed('flipper__advanced'));
     // sets a new mode based on which metric button was pushed
-    mode = d3.select(this).attr('class').split('__')[1];
-    console.log(mode);
+    thisMode = d3.select(this).attr('class').split('__')[1];
     // animates the data and updates the chatter
     animateData();
     updateChatter();

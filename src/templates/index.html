@@ -114,10 +114,10 @@ googletag.cmd.push(function () {
           build();
 
 
-  // var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop")
-  //                 .defineSizeMapping(dfpSizeMapping)
-  //                 .setTargeting("position", "Top")
-  //                 .addService(googletag.pubads());
+  var adSlot0 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionTop")
+                  .defineSizeMapping(dfpSizeMapping)
+                  .setTargeting("position", "Top")
+                  .addService(googletag.pubads());
 
   /*
   var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle")
@@ -201,7 +201,7 @@ googletag.cmd.push(function () {
 
       <div class="chart">
         <div class="chatter">
-          <p><strong>Totaling up the points: </strong>Breaking down the top five rookies in our <span class="traditional">traditional</span><span class="advanced">advanced</span> metric scores by each statistic (<span class="traditional">points, rebounds, assists, steals and blocks per game</span><span class="advanced">minutes per game, winshares, boxscore +/-, usage percentage and player efficiency rating</span>):</p>
+          <p><strong>Totaling up the points: </strong>Breaking down the top rookies in our <span class="traditional">traditional</span><span class="advanced">advanced</span> metric scores by each statistic (<span class="traditional">points, rebounds, assists, steals and blocks per game</span><span class="advanced">minutes per game, winshares, boxscore +/-, usage percentage and player efficiency rating</span>):</p>
         </div>
         <div id="player__mods"></div>
         <p class="source"><strong>Source:</strong> <a href="https://www.basketball-reference.com/" target="_blank">Basketball Reference</a>. <strong>Note:</strong> Only rookies who qualify for the NBA’s points per game leaderboard shown.</p>
@@ -221,103 +221,14 @@ googletag.cmd.push(function () {
 
     <div id="past-roty" class="chart">
       <div class="chatter">
-        <h5>History of top performers</h5>
-        <p>Where each rookie of the year winner over the last 10 years finished in our traditional and advanced metric scoring system relative to their class, including how many points above the next rookie or below the top rookie in each score.</p>
+        <h5>A decade of winners</h5>
+        <p>In the last 10 years, all but one rookie of the year winner finished first in either our traditional or advanced metric score. Six finished first in both. See how close the scores were between rookie of the year winners and their closest competition. Touch the circles for more details:</p>
+        <ul class="key">
+          <li class="key--roty">Rookie of the Year winner</li>
+        </ul>
       </div>
-      <div id="past-roty__chart">
-        <div class="past-player">
-          <p class="label">2008-09</p>
-          <h6>Derrick Rose</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td>3rd</td><td>-0.77</td></tr>
-            <tr><td>Adv.</td><td class="rank_one">1st</td><td>0.02</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2009-10</p>
-          <h6>Tyreke Evans</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td class="rank_one">1st</td><td>0.62</td></tr>
-            <tr><td>Adv.</td><td class="rank_one">1st</td><td>2.85</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2010-11</p>
-          <h6>Blake Griffin</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td class="rank_one">1st</td><td>4.67</td></tr>
-            <tr><td>Adv.</td><td class="rank_one">1st</td><td>6.32</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2011-12</p>
-          <h6>Kyrie Irving</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td class="rank_one">1st</td><td>3.39</td></tr>
-            <tr><td>Adv.</td><td class="rank_one">1st</td><td>4.63</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2012-13</p>
-          <h6>Damian Lillard</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td class="rank_one">1st</td><td>2.37</td></tr>
-            <tr><td>Adv.</td><td class="rank_one">1st</td><td>8.76</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2013-14</p>
-          <h6>Michael Carter-Williams</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td class="rank_one">1st</td><td>4.67</td></tr>
-            <tr><td>Adv.</td><td>2nd</td><td>-1.46</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2014-15</p>
-          <h6>Andrew Wiggins</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td>3rd</td><td>-3.78</td></tr>
-            <tr><td>Adv.</td><td>4th</td><td>-2.75</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2015-16</p>
-          <h6>Karl-Anthony Towns</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td class="rank_one">1st</td><td>2.60</td></tr>
-            <tr><td>Adv.</td><td class="rank_one">1st</td><td>3.13</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2016-17</p>
-          <h6>Malcolm Brogdon</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td>2nd</td><td>-0.34</td></tr>
-            <tr><td>Adv.</td><td class="rank_one">1st</td><td>0.29</td></tr>
-          </table>
-        </div>
-        <div class="past-player">
-          <p class="label">2017-18</p>
-          <h6>Ben Simmons</h6>
-          <table>
-            <tr><th>Stats</th><th>Rank</th><th>+/-</th></tr>
-            <tr><td>Trad.</td><td class="rank_one">1st</td><td>6.46</td></tr>
-            <tr><td>Adv.</td><td class="rank_one">1st</td><td>2.81</td></tr>
-          </table>
-        </div>
-      </div>
+      <div id="past-roty__graphic" class="chart__container"></div>
       <p class="source"><strong>Source:</strong> <a href="https://www.basketball-reference.com/" target="_blank">Basketball Reference</a>.</p>
-
 
     </div>
 
@@ -337,7 +248,7 @@ googletag.cmd.push(function () {
           <li class="key--roty">Rookie of the Year winner</li>
         </ul>
       </div>
-      <div id="all-roty__graphic" class="inline-block"></div>
+      <div id="all-roty__graphic" class="inline-block chart__container"></div>
       <p class="source"><strong>Source:</strong> <a href="https://www.basketball-reference.com/" target="_blank">Basketball Reference</a>. <strong>Note:</strong> Excluding Kyrie Irving, Only rookies who qualify for the NBA’s points per game leaderboard shown. Irving won rookie of the year in 2012 despite only playing 51 games.</p>
     </div>
 
@@ -352,8 +263,8 @@ googletag.cmd.push(function () {
     <p class="subhead" id="methodology">How we scored the rookies</p>
     <div class="meth__block">
       <p>Each player in this season’s rookie class was rated against one another in ten statistical categories. Our traditional score uses per game numbers for points, rebounds, assists, steals and blocks. The advanced score is comprised of minutes per game, winshares, box score plus/minus, player efficiency rating and usage percentage.</p>
-      <p>To generate a players total score in each of these categories, players were assigned a z-score for each stat. The z-score measures not just where a player ranks among a group, but how much better — or worse — that player is versus the group’s average in that statistic. Those scores were then added together to calculate our total metric scores. In short, the better each player is than the average player in a statistic, the higher their total score would be.</p>
-      <p>For example: Luka Doncic’s total traditional score ((use luka's hard numbers here to show calculation))</p>
+      <p>To generate a player's total score, players were assigned a <a href="https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/z-score/" target="_blank">z-score</a> for each stat. The z-score measures not just where a player ranks among a group, but how much better — or worse — that player is versus the group’s average in that statistic. Those scores are  combined to calculate our total metric scores. In short, the better each player is than the average player in a statistic, the higher their total score.</p>
+      <p><strong>For example:</strong> Luka Doncic’s total traditional score of <span class="smart-text__total_stand" data-player="Luka Doncic"></span> is calculated by adding his z-scores for per-game averages of points, rebound, assists, steals and blocks (<span class="smart-text__z-ppg" data-player="Luka Doncic"></span> + <span class="smart-text__z-rpg" data-player="Luka Doncic"></span> + <span class="smart-text__z-apg" data-player="Luka Doncic"></span> + <span class="smart-text__z-spg" data-player="Luka Doncic"></span> + <span class="smart-text__z-bpg" data-player="Luka Doncic"></span> = <span class="smart-text__total_stand" data-player="Luka Doncic"></span>).</p>
     </div>
 
 

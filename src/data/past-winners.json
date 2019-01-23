@@ -1,0 +1,51 @@
+[
+  {"year": "2009", "stat": "traditional", "playername": "Brook Lopez", "playerscore": 4.19},
+  {"year": "2009", "stat": "traditional", "playername": "Derrick Rose", "playerscore": 3.42},
+  {"year": "2009", "stat": "advanced", "playername": "Brook Lopez", "playerscore": 3.81},
+  {"year": "2009", "stat": "advanced", "playername": "Derrick Rose", "playerscore": 3.83},
+
+  {"year": "2010", "stat": "traditional", "playername": "Stephen Curry", "playerscore": 6.52},
+  {"year": "2010", "stat": "traditional", "playername": "Tyreke Evans", "playerscore": 7.14},
+  {"year": "2010", "stat": "advanced", "playername": "Stephen Curry", "playerscore": 5.75},
+  {"year": "2010", "stat": "advanced", "playername": "Tyreke Evans", "playerscore": 8.59},
+
+  {"year": "2011", "stat": "traditional", "playername": "Greg Monroe", "playerscore": 3.61},
+  {"year": "2011", "stat": "traditional", "playername": "Blake Griffin", "playerscore": 8.28},
+  {"year": "2011", "stat": "advanced", "playername": "Greg Monroe", "playerscore": 4.58},
+  {"year": "2011", "stat": "advanced", "playername": "Blake Griffin", "playerscore": 10.90},
+
+  {"year": "2012", "stat": "traditional", "playername": "Kemba Walker", "playerscore": 2.67},
+  {"year": "2012", "stat": "traditional", "playername": "Kyrie Irving", "playerscore": 6.06},
+  {"year": "2012", "stat": "advanced", "playername": "Kawhi Leonard", "playerscore": 5.06},
+  {"year": "2012", "stat": "advanced", "playername": "Kyrie Irving", "playerscore": 9.69},
+
+  {"year": "2013", "stat": "traditional", "playername": "Maruice Harkless", "playerscore": 4.58},
+  {"year": "2013", "stat": "traditional", "playername": "Damian Lillard", "playerscore": 6.95},
+  {"year": "2013", "stat": "advanced", "playername": "Michael Kidd-Gilchrist", "playerscore": 2.27},
+  {"year": "2013", "stat": "advanced", "playername": "Damian Lillard", "playerscore": 11.03},
+
+  {"year": "2014", "stat": "traditional", "playername": "Victor Oladip", "playerscore": 6.04},
+  {"year": "2014", "stat": "traditional", "playername": "Michael Carter-Williams", "playerscore": 10.71},
+  {"year": "2014", "stat": "advanced", "playername": "Mason Plumlee", "playerscore": 6.79},
+  {"year": "2014", "stat": "advanced", "playername": "Michael Carter-Williams", "playerscore": 5.44},
+
+  {"year": "2015", "stat": "traditional", "playername": "Nerlens Noel", "playerscore": 7.99},
+  {"year": "2015", "stat": "traditional", "playername": "Andrew Wiggins", "playerscore": 4.21},
+  {"year": "2015", "stat": "advanced", "playername": "Nikola Mirotic", "playerscore": 7.06},
+  {"year": "2015", "stat": "advanced", "playername": "Andrew Wiggins", "playerscore": 4.31},
+
+  {"year": "2016", "stat": "traditional", "playername": "Kristaps Porzingis", "playerscore": 5.16},
+  {"year": "2016", "stat": "traditional", "playername": "Karl-Anthony Towns", "playerscore": 7.76},
+  {"year": "2016", "stat": "advanced", "playername": "Nikola Jokic", "playerscore": 6.85},
+  {"year": "2016", "stat": "advanced", "playername": "Karl-Anthony Towns", "playerscore": 9.98},
+
+  {"year": "2017", "stat": "traditional", "playername": "Dario Saric", "playerscore": 6.39},
+  {"year": "2017", "stat": "traditional", "playername": "Malcolm Brogdon", "playerscore": 6.05},
+  {"year": "2017", "stat": "advanced", "playername": "Willy Hernangomez", "playerscore": 6.72},
+  {"year": "2017", "stat": "advanced", "playername": "Malcolm Brogdon", "playerscore": 7.01},
+
+  {"year": "2018", "stat": "traditional", "playername": "Donovan Mitchell", "playerscore": 5.63},
+  {"year": "2018", "stat": "traditional", "playername": "Ben Simmons", "playerscore": 12.09},
+  {"year": "2018", "stat": "advanced", "playername": "Donovan Mitchell", "playerscore": 7.30},
+  {"year": "2018", "stat": "advanced", "playername": "Ben Simmons", "playerscore": 10.18},
+]

@@ -9,6 +9,7 @@ import drawChart from './drawChart';
 import drawHistorical from './drawHistorical';
 import drawRank from './drawRank';
 import smartText from './smart-text';
+import drawWinners from './drawWinners';
 
 $(document).ready(() => {
   // the location of our player data that's parsed from our python script
@@ -46,6 +47,7 @@ $(document).ready(() => {
   // toggles the visibility of various elements with the traditional or advanced
   // class depending on which mode is chosen
   function metricDisplay() {
+    console.log('Our mode is ', mode);
     if (mode === 'traditional') {
       $('.traditional').removeClass('no-show');
       $('.advanced').addClass('no-show');
@@ -65,12 +67,12 @@ $(document).ready(() => {
   }
 
   // function that draws the top five charts
-  function drawTopFive(data, formattedData) {
+  function drawTopSix(data, formattedData) {
     sortPlayers(data); // sort the players
     const playerModsContainer = document.getElementById('player__mods');
     playerModsContainer.innerHTML = ''; // clear the element that holds the charts
 
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 6; i += 1) {
       // create the html using handlebars template, add that html to the chart container,
       // then draw the chart
       const playerMod = playerModTemplate(data.players[i]);
@@ -82,10 +84,9 @@ $(document).ready(() => {
   // adding controls to toggle the metric chosen
   function metricSwitcher(data) {
     $('.metric__flipper button').click(function () {
-      // $('.metric__flipper button').toggleClass('flipper__traditional flipper__advanced');
+      $('.metric__flipper button').toggleClass('flipper__traditional flipper__advanced');
       mode = $(this).attr('class').split('__')[1]; // update the mode
-      console.log(mode);
-      drawTopFive(data, FORMATTED_DATA); // redraw the top five
+      drawTopSix(data, FORMATTED_DATA); // redraw the top five
       metricDisplay(mode); // show/hide appropriate elements
     });
   }
@@ -125,10 +126,33 @@ $(document).ready(() => {
     smartText.updateSmartText(data, 'Jaren Jackson');
     smartText.updateDifferences(data, 'total_stand_zscore', 'Luka Doncic', 'Deandre Ayton');
     drawRank(data, mode); // draws the ranking chart
-    drawTopFive(data, FORMATTED_DATA); // draws the top five chart
-    metricDisplay(); // shows which ever metric matches our mode
+    drawTopSix(data, FORMATTED_DATA); // draws the top five chart
     drawHistorical(); // draws the historical chart
+    metricDisplay();
     metricSwitcher(data); // sets up interactions with the metric switcher
+    drawWinners();
+
+    // ***************************************************************************
+    // REDRAWING CHARTS ON WINDOW RESIZE
+    // ***************************************************************************
+
+    let windowWidth = $(window).width();
+
+    $(window).resize(() => {
+      setTimeout(() => {
+        const newWidth = $(window).width();
+
+        if (newWidth !== windowWidth) {
+          $('.chart__container').html('');
+          drawRank(data, mode);
+          drawHistorical();
+          drawWinners();
+          drawTopSix(data, FORMATTED_DATA);
+          metricDisplay();
+          windowWidth = newWidth;
+        }
+      }, 250);
+    });
   }
 
   // ***************************************************************************

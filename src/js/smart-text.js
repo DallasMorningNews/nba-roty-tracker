@@ -63,6 +63,13 @@ function updateSmartText(data, playerName) {
   $(`.smart-text__spg[data-player='${playerName}']`).text(thisPlayer.metrics.spg);
   $(`.smart-text__usg[data-player='${playerName}']`).text(thisPlayer.metrics.usg);
   $(`.smart-text__mpg[data-player='${playerName}']`).text(thisPlayer.metrics.mpg);
+  $(`.smart-text__total_stand[data-player='${playerName}']`).text((thisPlayer.total_stand_zscore).toFixed(2));
+  $(`.smart-text__z-ppg[data-player='${playerName}']`).text((thisPlayer.zscores.ppg).toFixed(3));
+  $(`.smart-text__z-rpg[data-player='${playerName}']`).text((thisPlayer.zscores.rpg).toFixed(3));
+  $(`.smart-text__z-apg[data-player='${playerName}']`).text((thisPlayer.zscores.apg).toFixed(3));
+  $(`.smart-text__z-spg[data-player='${playerName}']`).text((thisPlayer.zscores.spg).toFixed(3));
+  $(`.smart-text__z-bpg[data-player='${playerName}']`).text((thisPlayer.zscores.bpg).toFixed(3));
+
 }
 
 function updateDifferences(data, score, player1, player2) {
