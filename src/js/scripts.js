@@ -10,8 +10,19 @@ import drawHistorical from './drawHistorical';
 import drawRank from './drawRank';
 import smartText from './smart-text';
 import drawWinners from './drawWinners';
+import displayExplainer from './explainer';
+
+import glossary from './glossary.json';
 
 $(document).ready(() => {
+
+  $('.highlight').click(function () {
+    displayExplainer($(this));
+  });
+
+  $('.explainer__close').click(() => $('.explainer--click-displayed').removeClass('explainer--click-displayed'));
+
+
   // the location of our player data that's parsed from our python script
   const DATALOCATION = 'https://interactives.dallasnews.com/data-store/2018/nba-roty.json';
   let mode = 'traditional';
@@ -157,6 +168,11 @@ $(document).ready(() => {
       }, 250);
     });
   }
+
+  $(window).scroll(() => {
+    // when the window scrolls, hide any explainers that are showing
+    $('.explainer--click-displayed').removeClass('explainer--click-displayed');
+  });
 
   // ***************************************************************************
   // GRETTING THE DATA

@@ -1,0 +1,101 @@
+@import '_variables';
+@import '_mixins';
+
+/*
+-------------------------------------------
+HIGHLIGHTS AND EXPLAINERS
+-------------------------------------------
+*/
+
+.highlight {
+  display: inline;
+  position: relative;
+  z-index: 10;
+  background-size: 1px 2em;
+  border-bottom: 3px dotted lighten($dmnblue, 10);
+  padding: 0 1px;
+  @include transition(background-color, .25s, ease-out);
+}
+.explainer {
+  font-family: $sans;
+  padding-top: 1.2rem;
+  border-top: 8px solid $dmnblue;
+  @include transition(all, .25s, ease-out);
+  h6 {
+    font-weight: bold;
+    color: $black66;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  p {
+    @include type(1.3rem, 1.8rem, 1.8rem);
+  }
+  img {
+    width: 100%;
+  }
+}
+.explainer--hidden {
+  opacity: 0;
+  top: 5.7rem;
+}
+.explainer--scroll-displayed {
+  top: .7rem;
+  opacity: 1;
+}
+
+.explainer--click-displayed {
+  opacity: 1;
+  display: block !important;
+  box-shadow: 2px 2px 2px 2px rgba(33,33,33,.1),
+              -2px 2px 2px 2px rgba(33,33,33,.1),
+              -2px -2px 2px 2px rgba(33,33,33,.1),
+              2px -2px 2px 2px rgba(33,33,33,.1);
+  z-index: 20;
+}
+
+  .highlight {
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($dmnblue, 10);
+      color: white;
+    }
+  }
+  .explainer {
+    position: fixed;
+    padding: 20px;
+    background-color: white;
+    width: 90%;
+    left: calc((100% - 650px) / 2);
+    max-width: 650px;
+    @include transition(opacity, .25s, ease-out);
+    top: -300px;
+  }
+  .explainer--scroll-displayed {
+    display: none;
+  }
+
+  .explainer__close {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: $dmnblue;
+    border-radius: 50%;
+    &:before, &:after {
+      position: absolute;
+      left: 11px;
+      top: 5px;
+      content: ' ';
+      height: 15px;
+      width: 3px;
+      background-color: white;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
