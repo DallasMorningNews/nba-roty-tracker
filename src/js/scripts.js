@@ -41,7 +41,8 @@ $(document).ready(() => {
   Handlebars.registerHelper('imageName', player =>
     player.toLowerCase()
     .replace(/\s/g, '')
-    .replace('.', ''));
+    .replace('.', '')
+    .replace('\'', ''));
 
   // adds a br tag into player names when the window is wider than 1000. This is
   // so the display of player names are consistent regardless of length in the top five graphic

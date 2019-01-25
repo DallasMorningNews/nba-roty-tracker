@@ -68,7 +68,7 @@ function updateSmartText(data, playerName) {
   $(`.smart-text__z-rpg[data-player='${playerName}']`).text((thisPlayer.zscores.rpg).toFixed(3));
   $(`.smart-text__z-apg[data-player='${playerName}']`).text((thisPlayer.zscores.apg).toFixed(3));
   $(`.smart-text__z-spg[data-player='${playerName}']`).text((thisPlayer.zscores.spg).toFixed(3));
-  $(`.smart-text__z-bpg[data-player='${playerName}']`).text((thisPlayer.zscores.bpg).toFixed(3));
+  $(`.smart-text__z-bpg[data-player='${playerName}']`).text(`(${(thisPlayer.zscores.bpg).toFixed(3)})`);
 
 }
 

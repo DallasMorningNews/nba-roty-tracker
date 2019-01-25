@@ -3,10 +3,11 @@
 /*                       */
 
 @import 'base';
-
-@import 'header';
-@import 'footer';
 @import 'explainer';
+@import 'footer';
+@import 'header';
+@import 'subscribe';
+
 #content-header {
   padding-top: 4.8rem;
   text-align: center;
@@ -167,6 +168,10 @@
   }
 }
 
+.rank-circle {
+  cursor: pointer;
+}
+
 .key-label {
   background-color: $chartBlue;
   color: white;
@@ -220,6 +225,7 @@
   fill-opacity: .5;
   stroke: rgb(175,175,175);
   stroke-width: 1;
+  cursor: pointer;
 }
 
 .roty-dot {
@@ -286,6 +292,10 @@
       }
     }
   }
+}
+
+.past__trad, .past__adv {
+  cursor: pointer;
 }
 
 #all-roty, #past-roty {

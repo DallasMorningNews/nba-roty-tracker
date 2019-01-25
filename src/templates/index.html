@@ -118,12 +118,12 @@ googletag.cmd.push(function () {
                   .setTargeting("position", "Top")
                   .addService(googletag.pubads());
 
-  /*
+
   var adSlot1 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionMiddle")
                   .defineSizeMapping(dfpSizeMapping)
                   .setTargeting("position", "Top2")
                   .addService(googletag.pubads());
-  */
+
 
   /*
   var adSlot2 = googletag.defineSlot('/' + DFP_networkId + '/' + DFP_sitepage, DFPSlotSizes, "dfpAdPositionBottom")
@@ -232,6 +232,9 @@ googletag.cmd.push(function () {
 
     </div>
 
+    {%include "adblock2.html" %}
+
+
     <p class="subhead">Best in a decade?</p>
     <p>As previously stated, Doncic is having a statistical rookie campaign for the ages, placing him in some elite company when it comes to points, rebounds and assists.</p>
     <p>Given that, it’s no surprise that when Doncic is compared to the other <span class="rookie_count"></span> rookies in the last 10 years, he’s setting himself apart by having a season similar to the rookie campaigns of Damian Lillard, Tyreke Evans and Kyrie Irving in terms of our two scoring systems.</p>
@@ -259,6 +262,11 @@ googletag.cmd.push(function () {
     <p>And then there’s the hype and clutch play. The 19-year-old Mavericks rookie has made plenty of highlight reels, including his <a href="https://sportsday.dallasnews.com/dallas-mavericks/mavericks/2018/12/09/nba-king-texas-moment-mavericks" target="_blank">11-0 scoring run</a> over the final 2 minutes of play to lift Dallas to a victory over in-state rival Houston in December. That’s just one instance of the 10 times Doncic has hit a field goal to tie or take the lead in a game in the last two minutes of the fourth quarter or overtime, the most in the NBA.</p>
     <p>So, while the rookie seasons of Doncic and Ayton are comparable within our metrics, Doncic still holds the edge in the numbers and passes the eyeball test, almost surely guaranteeing that he takes home the rookie of the year hardware.</p>
 
+    <div class="subscribe-cta">
+      <h4>Looking for more great Mavericks coverage?</h4>
+      <p>If you want to stay up to date on the latest on Luka, Dirk and the Mavericks, please consider supporting sportsdaydfw.com and dallasnews.com by subscribing today.</p>
+      <a href="https://www.dallasnews.com/offers/sign-up">Subscribe now</a>
+    </div>
 
     <p class="subhead" id="methodology">How we scored the rookies</p>
     <div class="meth__block">
@@ -295,32 +303,22 @@ googletag.cmd.push(function () {
     <p class="twitter-tag">Follow John Hancock on Twitter at <a href="urlhere">@Hancock_JohnD.</a></p>
 
 
-    <section class="credits clearfix">
-        <p>Author: <a href="mailto:emailaddress">Name</a></p>
-        <p>Editor: <a href="mailto:emailaddress">Name</a></p>
-        <p>Copy Editor: <a href="mailto:emailaddress">Name</a></p>
-        <p>Photos: <a href="mailto:emailaddress">Name</a></p>
-        <p>Graphics: <a href="mailto:emailaddress">Name</a></p>
-        <p>Designer: <a href="mailto:emailaddress">Name</a></p>
-    </section>
-	<!-- end credits -->
-
 	<section class="more clearfix">
 		<h5>Read more from The Dallas Morning News</h5>
-		<a class="clearfix" href="#">
-			<img src="images/_defaultImage.jpg" alt="#" />
-			<h6>Story title goes here</h6>
-			<p>Description of the story goes in this spot here</p>
+		<a class="clearfix" href="https://interactives.dallasnews.com/2019/every-shot-dirk-ever-took/">
+			<img src="images/_dirk-share.jpg" alt="Dirk Nowitzki" />
+			<h6>Swish 41</h6>
+			<p>21 years. Over 26,000 shots. Tour every dunk, layup, 3-pointer and, of course, fadeaway jumper that make up Dirk Nowitzki’s career.</p>
 		</a>
-		<a class="clearfix" href="#">
-			<img src="images/_defaultImage.jpg" alt="#" />
-			<h6>Story title goes here</h6>
-			<p>Description of the story goes in this spot here</p>
+		<a class="clearfix" href="https://interactives.dallasnews.com/2017/beltre-3000-hits/">
+			<img src="images/_beltre-share.jpg" alt="Adrian Beltre" />
+			<h6>Adrian Beltre’s march to 3,000</h6>
+			<p>The Rangers third baseman is finally part of baseball’s elite club of hitters. See how he got there.</p>
 		</a>
-		<a class="clearfix" href="#">
-			<img src="images/_defaultImage.jpg" alt="#" />
-			<h6>Story title goes here</h6>
-			<p>Description of the story goes in this spot here</p>
+		<a class="clearfix" href="https://interactives.dallasnews.com/2017/romo-career/">
+			<img src="images/_romo-share.jpg" alt="Tony Romo" />
+			<h6>Tony Romo’s career, visualized</h6>
+			<p>He holds the franchise record for passing yards and touchdowns. See the result of every one of his passes.</p>
 		</a>
 	</section>
 	<!-- end more -->
