@@ -19,12 +19,12 @@
   {"year": "2012", "stat": "advanced", "playername": "Kawhi Leonard", "playerscore": 5.06},
   {"year": "2012", "stat": "advanced", "playername": "Kyrie Irving", "playerscore": 9.69},
 
-  {"year": "2013", "stat": "traditional", "playername": "Maruice Harkless", "playerscore": 4.58},
+  {"year": "2013", "stat": "traditional", "playername": "Maurice Harkless", "playerscore": 4.58},
   {"year": "2013", "stat": "traditional", "playername": "Damian Lillard", "playerscore": 6.95},
   {"year": "2013", "stat": "advanced", "playername": "Michael Kidd-Gilchrist", "playerscore": 2.27},
   {"year": "2013", "stat": "advanced", "playername": "Damian Lillard", "playerscore": 11.03},
 
-  {"year": "2014", "stat": "traditional", "playername": "Victor Oladip", "playerscore": 6.04},
+  {"year": "2014", "stat": "traditional", "playername": "Victor Oladipo", "playerscore": 6.04},
   {"year": "2014", "stat": "traditional", "playername": "Michael Carter-Williams", "playerscore": 10.71},
   {"year": "2014", "stat": "advanced", "playername": "Mason Plumlee", "playerscore": 6.79},
   {"year": "2014", "stat": "advanced", "playername": "Michael Carter-Williams", "playerscore": 5.44},
@@ -48,4 +48,9 @@
   {"year": "2018", "stat": "traditional", "playername": "Ben Simmons", "playerscore": 12.09},
   {"year": "2018", "stat": "advanced", "playername": "Donovan Mitchell", "playerscore": 7.30},
   {"year": "2018", "stat": "advanced", "playername": "Ben Simmons", "playerscore": 10.18},
+
+  {"year": "2019", "stat": "traditional", "playername": "Luka Doncic", "playerscore": 7.26},
+  {"year": "2019", "stat": "traditional", "playername": "Deandre Ayton", "playerscore": 6.39},
+  {"year": "2019", "stat": "advanced", "playername": "Luka Doncic", "playerscore": 10.29},
+  {"year": "2019", "stat": "advanced", "playername": "Deandre Ayton", "playerscore": 7.84},
 ]

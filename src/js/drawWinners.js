@@ -15,10 +15,11 @@ export default function () {
     'Karl-Anthony Towns',
     'Malcolm Brogdon',
     'Ben Simmons',
+    'Luka Doncic',
   ];
   console.log(pastWinners);
 
-  const years = ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'];
+  const years = ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'];
 
   const bars = pastWinners.map(function (mark, i) {
     if (i % 2 === 0) {
@@ -40,7 +41,7 @@ export default function () {
 
   // getting the dimensions of chart. we want a square, so we set height to the width
   const chartWidth = $('#past-roty__graphic').width();
-  const chartHeight = 790;
+  const chartHeight = 960;
 
   const xScale = d3.scaleLinear()
     .range([50, chartWidth - margin.left - margin.right])
@@ -49,7 +50,7 @@ export default function () {
   const yScale0 = d3.scaleBand()
     .range([0, chartHeight - margin.top - margin.bottom])
     .domain(years)
-    .padding(.05);
+    .padding(.1);
 
   const yScale1 = d3.scaleBand()
   .range([0, 50])
@@ -95,16 +96,26 @@ export default function () {
       .attr('x2', chartWidth - margin.left - margin.right)
       .attr('y1', yScale0(years[i]) + ((yScale0.bandwidth() / 2) + 10))
       .attr('y2', yScale0(years[i]) + ((yScale0.bandwidth() / 2) + 10))
+      .style('stroke-dasharray', ('3, 3'))
       .attr('stroke-width', 1)
-      .attr('stroke', 'rgb(235,235,235)');
+      .attr('stroke', 'rgb(215,215,215)');
 
     svg.append('line')
       .attr('x1', 50)
       .attr('x2', chartWidth - margin.left - margin.right)
       .attr('y1', yScale0(years[i]) + ((yScale0.bandwidth() / 2) - 10))
       .attr('y2', yScale0(years[i]) + ((yScale0.bandwidth() / 2) - 10))
+      .style('stroke-dasharray', ('3, 3'))
       .attr('stroke-width', 1)
-      .attr('stroke', 'rgb(235,235,235)');
+      .attr('stroke', 'rgb(215,215,215)');
+
+    // svg.append('line')
+    //   .attr('x1', 0)
+    //   .attr('x2', chartWidth - margin.left - margin.right)
+    //   .attr('y1', yScale0(years[i]) + ((yScale0.bandwidth()) - 8))
+    //   .attr('y2', yScale0(years[i]) + ((yScale0.bandwidth()) - 8))
+    //   .attr('stroke-width', 1)
+    //   .attr('stroke', 'rgb(215,215,215)');
 
     svg.append('text')
       .attr('x', 50)
@@ -175,6 +186,7 @@ export default function () {
       .classed('past__trad', true)
       .classed('rookie-dot', true)
       .classed('roty-dot', d => ROTY.includes(d.playername))
+      .classed('roty-luka', d => d.playername === 'Luka Doncic')
       .attr('cy', function(d) {
         return yScale0(d.year) + ((yScale0.bandwidth() / 2) - 10);
       })
@@ -191,6 +203,7 @@ export default function () {
     .classed('past__adv', true)
     .classed('rookie-dot', true)
     .classed('roty-dot', d => ROTY.includes(d.playername))
+    .classed('roty-luka', d => d.playername === 'Luka Doncic')
       .attr('cy', function(d) {
         return yScale0(d.year) + ((yScale0.bandwidth() / 2) + 10);
       })

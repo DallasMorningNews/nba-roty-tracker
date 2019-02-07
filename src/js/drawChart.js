@@ -83,8 +83,8 @@ export default function (originalData, formattedData, name, metricFormat) {
           })
           .style('opacity', (d) => {
             if (d[0] === name) {
-              return 0.85;
-            } return 0.5;
+              return 0.9;
+            } return 0.2;
           });
   });
 

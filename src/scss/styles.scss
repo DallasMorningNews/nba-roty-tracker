@@ -222,9 +222,10 @@
 
 .rookie-dot {
   fill: $black215;
-  fill-opacity: .5;
+  fill-opacity: .15;
   stroke: rgb(175,175,175);
   stroke-width: 1;
+  stroke-opacity: .25;
   cursor: pointer;
 }
 
@@ -232,15 +233,19 @@
   fill: $chartRed;
   fill-opacity: .85;
   stroke: darken($chartRed, 10);
+  stroke-opacity: 1;
 }
 .roty-2019 {
   fill: $chartYellow;
   stroke: darken($chartYellow, 10);
+  stroke-opacity: 1;
+  fill-opacity: .85;
 }
 .roty-luka {
   fill: $dmnblue;
   fill-opacity: .85;
   stroke: darken($dmnblue, 10);
+  stroke-opacity: 1;
 }
 
 .past__trad, .past__adv {
@@ -343,6 +348,15 @@
   @include type(1rem, 1.2rem, 0);
 }
 
+.player-label {
+  font-weight: 700;
+}
+
+@media (max-width: 740px) {
+  .player-label, .player-label-rule {
+    display: none;
+  }
+}
 
 .metric__flipper {
   display: inline-block;

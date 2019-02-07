@@ -4,6 +4,11 @@
 import $ from 'jquery';
 import allPastRookies from '../data/all_past_rookies.json';
 
+const lukaDoncic = allPastRookies.filter(rookie => rookie.name === 'Luka Doncic');
+console.log(lukaDoncic);
+const blakeGriffin = allPastRookies.filter(rookie => rookie.name === 'Blake Griffin');
+const benSimmons = allPastRookies.filter(rookie => rookie.name === 'Ben Simmons');
+
 import figureMinMax from './figureMinMax';
 
 $('.rookie_count').text(allPastRookies.length - 1);
@@ -32,22 +37,22 @@ export default function () {
   const tradMinMax = figureMinMax(allPastRookies, 'traditional');
   const advMinMax = figureMinMax(allPastRookies, 'advanced');
 
-  console.log(tradMinMax, advMinMax);
+  const minMax = tradMinMax[1] >= advMinMax[1] ? tradMinMax : advMinMax;
 
   const xScale = d3.scaleLinear()
-    .domain(tradMinMax)
+    .domain(minMax)
     .range([margin.left, chartWidth - margin.right - margin.left]);
 
   const yScale = d3.scaleLinear()
-    .domain(advMinMax)
+    .domain(minMax)
     .range([chartHeight - margin.bottom - margin.top, margin.top]);
 
   const xAxis = d3.axisBottom(xScale)
     .ticks(2)
-    .tickValues([tradMinMax[0], tradMinMax[1]]);
+    .tickValues([minMax[0], minMax[1]]);
   const yAxis = d3.axisLeft(yScale)
     .ticks(2)
-    .tickValues([advMinMax[0], advMinMax[1]]);
+    .tickValues([minMax[0], minMax[1]]);
 
   const svg = d3.select('#all-roty__graphic')
     .append('svg')
@@ -84,6 +89,54 @@ export default function () {
       .style('opacity', 0);
   };
 
+  svg.append('text')
+    .text('Luka Doncic')
+    .attr('class', 'player-label')
+    .attr('x', xScale(lukaDoncic[0].traditional) - 30)
+    .attr('y', yScale(lukaDoncic[0].advanced) - 40)
+    .attr('text-anchor', 'end');
+
+  svg.append('line')
+    .attr('class', 'player-label-rule')
+    .attr('x1', xScale(lukaDoncic[0].traditional) - 28)
+    .attr('x2', xScale(lukaDoncic[0].traditional))
+    .attr('y1', yScale(lukaDoncic[0].advanced) - 38)
+    .attr('y2', yScale(lukaDoncic[0].advanced))
+    .attr('stroke-width', 1)
+    .attr('stroke', 'rgb(215,215,215)');
+
+  svg.append('text')
+    .text('Blake Griffin')
+    .attr('class', 'player-label')
+    .attr('x', xScale(blakeGriffin[0].traditional) - 20)
+    .attr('y', yScale(blakeGriffin[0].advanced) + 3)
+    .attr('text-anchor', 'end');
+
+  svg.append('line')
+    .attr('class', 'player-label-rule')
+    .attr('x1', xScale(blakeGriffin[0].traditional) - 15)
+    .attr('x2', xScale(blakeGriffin[0].traditional))
+    .attr('y1', yScale(blakeGriffin[0].advanced))
+    .attr('y2', yScale(blakeGriffin[0].advanced))
+    .attr('stroke-width', 1)
+    .attr('stroke', 'rgb(215,215,215)');
+
+  svg.append('text')
+    .text('Ben Simmons')
+    .attr('class', 'player-label')
+    .attr('x', xScale(benSimmons[0].traditional))
+    .attr('y', yScale(benSimmons[0].advanced) + 30)
+    .attr('text-anchor', 'middle');
+
+  svg.append('line')
+    .attr('class', 'player-label-rule')
+    .attr('x1', xScale(benSimmons[0].traditional))
+    .attr('x2', xScale(benSimmons[0].traditional))
+    .attr('y1', yScale(benSimmons[0].advanced))
+    .attr('y2', yScale(benSimmons[0].advanced) + 20)
+    .attr('stroke-width', 1)
+    .attr('stroke', 'rgb(215,215,215)');
+
   svg.append('g')
     .attr('class', 'x axis')
     .attr('transform', `translate(0, ${(chartHeight - margin.top) / 2})`)
@@ -93,7 +146,7 @@ export default function () {
       .attr('x', margin.left)
       .attr('y', -6)
       .style('text-anchor', 'start')
-      .text('Traditional z-score');
+      .text('Traditional metrics');
 
   svg.append('g')
     .attr('class', 'y axis')
@@ -105,7 +158,7 @@ export default function () {
       .attr('x', margin.top)
       .attr('y', -6)
       .style('text-anchor', 'start')
-      .text('Advanced z-score');
+      .text('Advanced metrics');
 
   svg.selectAll('.rookie-dot')
     .data(allPastRookies)
@@ -121,8 +174,10 @@ export default function () {
     .on('mouseover', tipMouseover)
     .on('mouseout', tipMouseout);
 
+
+
   d3.selectAll('.rookie-dot').filter(function (d) {
-    if (d !== undefined && ROTY.includes(d.name)) {
+    if ((d !== undefined && ROTY.includes(d.name)) || (d !== undefined && d.year === '2018-19')) {
       d3.select(this).moveToFront();
     } return null;
   });
