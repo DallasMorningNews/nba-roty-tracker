@@ -109,19 +109,11 @@ export default function () {
       .attr('stroke-width', 1)
       .attr('stroke', 'rgb(215,215,215)');
 
-    // svg.append('line')
-    //   .attr('x1', 0)
-    //   .attr('x2', chartWidth - margin.left - margin.right)
-    //   .attr('y1', yScale0(years[i]) + ((yScale0.bandwidth()) - 8))
-    //   .attr('y2', yScale0(years[i]) + ((yScale0.bandwidth()) - 8))
-    //   .attr('stroke-width', 1)
-    //   .attr('stroke', 'rgb(215,215,215)');
-
     svg.append('text')
       .attr('x', 50)
       .attr('class', 'chart-label')
       .attr('y', yScale0(years[i]) + ((yScale0.bandwidth() / 2) + 8))
-      .text('Advanced');
+      .text('Adv.');
 
     svg.append('text')
       .attr('x', 50)
@@ -140,7 +132,7 @@ export default function () {
       .attr('x', 50)
       .attr('class', 'chart-label')
       .attr('y', yScale0(years[i]) + ((yScale0.bandwidth() / 2) - 13))
-      .text('Traditional');
+      .text('Trad.');
 
     svg.append('text')
       .attr('x', 0)
@@ -152,6 +144,8 @@ export default function () {
       .attr('xlink:href', `images/_${ROTY[i].replace(/-|\s/g, '').toLowerCase()}.png`)
       .attr('x', 0)
       .attr('y', yScale0(years[i]) + ((yScale0.bandwidth() / 2) - 25))
+      .attr('width', '40px')
+      .attr('height', '40px')
       .attr('class', 'past-mug');
   }
 

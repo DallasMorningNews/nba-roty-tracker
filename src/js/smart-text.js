@@ -55,7 +55,6 @@ function headline(data) {
 
 function updateSmartText(data, playerName) {
   const thisPlayer = data.players.find(player => player.player === playerName);
-  console.log(thisPlayer);
 
   $(`.smart-text__ppg[data-player='${playerName}']`).text(thisPlayer.metrics.ppg);
   $(`.smart-text__rbg[data-player='${playerName}']`).text(thisPlayer.metrics.rpg);
@@ -69,7 +68,6 @@ function updateSmartText(data, playerName) {
   $(`.smart-text__z-apg[data-player='${playerName}']`).text((thisPlayer.zscores.apg).toFixed(3));
   $(`.smart-text__z-spg[data-player='${playerName}']`).text((thisPlayer.zscores.spg).toFixed(3));
   $(`.smart-text__z-bpg[data-player='${playerName}']`).text(`(${(thisPlayer.zscores.bpg).toFixed(3)})`);
-
 }
 
 function updateDifferences(data, score, player1, player2) {

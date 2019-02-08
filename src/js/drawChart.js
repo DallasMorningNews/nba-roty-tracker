@@ -70,21 +70,26 @@ export default function (originalData, formattedData, name, metricFormat) {
             if (d[0] === name && d[0] === 'Luka Doncic') {
               return '#0165a0';
             } else if (d[0] === name) {
-              return '#feb31c';
-            } return 'rgb(175,175,175)';
+              return '#ca341c';
+            } return 'rgb(33,33,33)';
           })
           .attr('stroke-width', 1)
+          .attr('stroke-opacity', (d) => {
+            if (d[0] === name) {
+              return 1;
+            } return 0.4;
+          })
           .style('fill', (d) => {
             if (d[0] === name && d[0] === 'Luka Doncic') {
               return '#329ce8';
             } else if (d[0] === name) {
-              return '#fec44f';
+              return '#e34e36';
             } return 'rgb(215,215,215)';
           })
           .style('opacity', (d) => {
             if (d[0] === name) {
               return 0.9;
-            } return 0.2;
+            } return 0.25;
           });
   });
 

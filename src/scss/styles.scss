@@ -139,8 +139,8 @@
   }
 }
 .z-spine, .zeroLine {
-  stroke: $black215;
-  stroke-width: 1;
+  stroke: $black33;
+  stroke-width: .5;
 }
 .line-label {
   text-transform: uppercase;
@@ -222,20 +222,20 @@
 
 .rookie-dot {
   fill: $black215;
-  fill-opacity: .15;
+  fill-opacity: .25;
   stroke: rgb(175,175,175);
   stroke-width: 1;
-  stroke-opacity: .25;
+  stroke-opacity: .4;
   cursor: pointer;
 }
 
-.roty-dot {
+.roty-2019 {
   fill: $chartRed;
   fill-opacity: .85;
   stroke: darken($chartRed, 10);
   stroke-opacity: 1;
 }
-.roty-2019 {
+.roty-dot {
   fill: $chartYellow;
   stroke: darken($chartYellow, 10);
   stroke-opacity: 1;
@@ -257,48 +257,6 @@
   font-weight: bold;
 }
 
-#past-roty__chart {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 2.4rem;
-  font-family: $sans;
-  p {
-    @include type(1.2rem, 1.5rem, .3rem);
-  }
-  h6 {
-    font-weight: bold;
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-  }
-  table {
-    width: 100%;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    tr {
-      border-bottom: 1px solid $black235;
-      &:first-of-type {
-        border-top: 1px solid $black235;
-      }
-    }
-    th, td {
-      padding: .3rem;
-      border-left: 1px solid $black235;
-      border-right: 1px solid $black235;
-    }
-    th {
-      font-weight: bold;
-      text-align: center;
-    }
-    td {
-      text-align: center;
-      &.rank_one {
-        background-color: lighten($chartGreen, 45);
-      }
-    }
-  }
-}
-
 .past__trad, .past__adv {
   cursor: pointer;
 }
@@ -318,7 +276,7 @@
   li {
     display: inline-block;
     margin-right: 10px;
-    @include type(1.2rem, 1.5rem, 1.5rem);
+    @include type(1.2rem, 1.5rem, .3remrem);
     &:before {
       @include psuedoElement(.9rem, .9rem, relative);
       margin-right: 2px;
@@ -331,11 +289,11 @@
       background-color: rgba($chartBlue, .85);
       border: 1px solid #0165a0;
     }
-    &.key--2018:before {
+    &.key--roty:before {
       background-color: rgba(254, 196, 79, .85);
       border: 1px solid rgb(254, 179, 2);
     }
-    &.key--roty:before {
+    &.key--2018:before {
       background-color: rgba(227, 78, 54, .85);
       border: 1px solid rgb(202, 52, 28);
     }
@@ -349,7 +307,8 @@
 }
 
 .player-label {
-  font-weight: 700;
+  font-weight: 400;
+  @include type(1.1rem, 1.4rem, 0);
 }
 
 @media (max-width: 740px) {
@@ -376,6 +335,8 @@
     position: absolute;
     left: 0;
     top: 0;
+    padding: 0;
+    background-color: white;
     @include transition(all, .1s, ease-out);
     &.flipper__advanced {
       left: calc(100% - 20px);

@@ -3,13 +3,11 @@
 
 import $ from 'jquery';
 import allPastRookies from '../data/all_past_rookies.json';
+import figureMinMax from './figureMinMax';
 
 const lukaDoncic = allPastRookies.filter(rookie => rookie.name === 'Luka Doncic');
-console.log(lukaDoncic);
 const blakeGriffin = allPastRookies.filter(rookie => rookie.name === 'Blake Griffin');
 const benSimmons = allPastRookies.filter(rookie => rookie.name === 'Ben Simmons');
-
-import figureMinMax from './figureMinMax';
 
 $('.rookie_count').text(allPastRookies.length - 1);
 
@@ -146,7 +144,7 @@ export default function () {
       .attr('x', margin.left)
       .attr('y', -6)
       .style('text-anchor', 'start')
-      .text('Traditional metrics');
+      .text('Traditional score');
 
   svg.append('g')
     .attr('class', 'y axis')
@@ -158,7 +156,7 @@ export default function () {
       .attr('x', margin.top)
       .attr('y', -6)
       .style('text-anchor', 'start')
-      .text('Advanced metrics');
+      .text('Advanced score');
 
   svg.selectAll('.rookie-dot')
     .data(allPastRookies)

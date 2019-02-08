@@ -4,6 +4,7 @@ import apOrdinal from './ap-ordinal';
 
 
 export default function (data, metric) {
+  console.log(data.players[0]);
   let thisMode = metric; // defining whether we're looking at traditional or advanced metrics
   let playerRanks = []; // empty array to hold our players
 
@@ -32,7 +33,7 @@ export default function (data, metric) {
 
   // setting variables for it's height and width
   const svgWidth = rankElem.clientWidth;
-  const svgHeight = 20;
+  const svgHeight = 35;
 
   // defining a variable for our dot radius
   const dotRadius = 8;
@@ -42,14 +43,24 @@ export default function (data, metric) {
   const x = d3.scaleLinear()
     .range([dotRadius, svgWidth - (dotRadius * 2)]);
 
+
+  let minMax = [];
   // defining our domain based on the metric supplied. Technically, we don't need
   // this check, but since we often switch our default view in testing, it's nice
   // to have the chart draw dynamically to the metric supplied
   if (metric === 'traditional') {
     x.domain(d3.extent(playerRanks, d => d[1]));
+    minMax = d3.extent(playerRanks, d => d[1]);
   } else if (metric === 'advanced') {
     x.domain(d3.extent(playerRanks, d => d[2]));
+    minMax = d3.extent(playerRanks, d => d[2]);
   }
+
+  // our xAxis
+  const xAxis = d3.axisBottom(x)
+    .ticks(3)
+    .tickSizeOuter(0)
+    .tickValues([minMax[0], 0, minMax[1]]);
 
   // creating our svg element
   const svg = d3.select('#player__ranks .chart__container').append('svg')
@@ -57,13 +68,13 @@ export default function (data, metric) {
     .attr('height', svgHeight);
 
   // creating the line that the dots live on
-  svg.append('line')
-    .attr('x1', dotRadius)
-    .attr('x2', svgWidth - (dotRadius * 2))
-    .attr('y1', dotRadius + 2)
-    .attr('y2', dotRadius + 2)
-    .attr('stroke', 'rgb(215,215,215)')
-    .attr('stroke-width', 1);
+  // svg.append('line')
+  //   .attr('x1', dotRadius)
+  //   .attr('x2', svgWidth - (dotRadius * 2))
+  //   .attr('y1', dotRadius + 2)
+  //   .attr('y2', dotRadius + 2)
+  //   .attr('stroke', 'rgb(215,215,215)')
+  //   .attr('stroke-width', 1);
 
   // creating our tooltip element
   const tooltip = d3.select('#player__ranks .chart__container').append('div')
@@ -108,6 +119,20 @@ export default function (data, metric) {
       .style('opacity', 0);
   };
 
+  svg.append('g')
+    .attr('class', 'x axis')
+    .attr('transform', `translate(0, ${(dotRadius) + 2})`)
+    .call(xAxis)
+    .selectAll('.x text')
+    .attr('dy', 15);
+
+  svg.append('line')
+    .attr('class', 'zeroLine')
+    .attr('x1', x(0))
+    .attr('x2', x(0))
+    .attr('y1', 2)
+    .attr('y2', (dotRadius * 2) + 2);
+
   // drawing our circles
   const ranks = svg.selectAll('.rank-circle')
     .data(playerRanks)
@@ -125,7 +150,6 @@ export default function (data, metric) {
     .style('opacity', 0.75)
     .on('mouseover', tipMouseover)
     .on('mouseout', tipMouseout);
-
   // ----------------------------------------
   // HELPER FUNCTIONS
   // ----------------------------------------
@@ -136,9 +160,12 @@ export default function (data, metric) {
     // reset the domain of the chart based on the metric selected
     if (thisMode === 'traditional') {
       x.domain(d3.extent(playerRanks, d => d[1]));
+      minMax = d3.extent(playerRanks, d => d[1]);
     } else if (thisMode === 'advanced') {
       x.domain(d3.extent(playerRanks, d => d[2]));
+      minMax = d3.extent(playerRanks, d => d[2]);
     }
+
 
     // animate the circles based on metric
     svg.selectAll('.rank-circle')
@@ -150,6 +177,28 @@ export default function (data, metric) {
           return x(d[1]);
         } return x(d[2]);
       });
+
+    xAxis.tickValues([minMax[0], 0, minMax[1]]);
+
+    svg.select('.x')
+      .transition()
+      .duration(1000)
+      .call(xAxis);
+      // .selectAll('text')
+      //   .attr('dy', 30);
+
+    setTimeout(() => {
+      svg.selectAll('.x text')
+        .attr('dy', 15);
+    }, 1);
+
+    svg.select('.zeroLine')
+      .transition()
+      .duration(1000)
+      .attr('x1', x(0))
+      .attr('x2', x(0))
+      .attr('y1', 2)
+      .attr('y2', (dotRadius * 2) + 2);
   }
 
   // function to sort our player list based on metric. This used to figure out
@@ -215,7 +264,6 @@ export default function (data, metric) {
 
   // listens for when the metric flipper is interacted with
   d3.selectAll('.metric__flipper button').on('click', function () {
-    console.log('changing mode');
     d3.select(this).classed('flipper__traditional', !d3.select(this).classed('flipper__traditional'));
     d3.select(this).classed('flipper__advanced', !d3.select(this).classed('flipper__advanced'));
     // sets a new mode based on which metric button was pushed
