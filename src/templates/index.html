@@ -47,6 +47,7 @@
 
 
 {%block custom_head%}
+  <link rel="canonical" href="{{url}}" />
   <script src="https://d3js.org/d3.v5.min.js"></script>
   {% raw %}
 
@@ -192,8 +193,6 @@ googletag.cmd.push(function () {
               <button class="flipper__traditional"></button>
             </div>
             <span>Advanced</span>
-            <!-- <button class="int-btn active-button">Traditional</button>
-            <button class="int-btn">Advanced</button> -->
           </div>
         </div>
         <div class="chart__container"></div>
@@ -209,10 +208,6 @@ googletag.cmd.push(function () {
 
     {%include "adblock1.html" %}
 
-    <!--
-      use the above include with adblock2.html and adblock3.html to place adblocks 2 and 3, then delete this comment.
-      it won't self-destruct, but it is cleaner
-    -->
     <p class="subhead">Recent history is on his side</p>
     <p>If Doncic finishes the season where he is now, leading all rookies in our traditional and advanced metric scores, he’ll be the seventh rookie since 2008-09 to do so. The other six all won NBA Rookie of the Year. Three of the remaining four rookie of the year winners finished first in at least one of our metric scores.</p>
     <p>Currently, Doncic leads Ayton by <span class="difference-text__total_stand_zscore" data-player1="Luka Doncic" data-player2="Deandre Ayton"></span> in our traditional metrics score and <span class="difference-text__total_adv_zscore" data-player1="Luka Doncic" data-player2="Deandre Ayton"></span> in our advanced metrics score. </p>
@@ -237,9 +232,9 @@ googletag.cmd.push(function () {
 
     <p class="subhead">Best in a decade?</p>
     <p>As previously stated, Doncic is having a statistical rookie campaign for the ages, placing him in some elite company when it comes to points, rebounds and assists.</p>
-    <p>Given that, it’s no surprise Doncic also sets himself apart when compared to the other <span class="rookie_count"></span> rookies seasons over the last 10 years. As of now, Doncic’s level of play ranks most closely with former rookie of the year winners Kyrie Irving and Tyreke Evans. It’s not out of the realm of possibility that Doncic ultimately matches the metric scores put up by Blake Griffin, Karl-Anthony Towns and Ben Simmons in their rookie campaigns.</p>
+    <p>Given that, it’s no surprise Doncic also sets himself apart when compared to the other <span class="rookie_count"></span> rookies since the 2008-09 season. As of now, Doncic’s traditional and advanced metric scores rank most closely with the rookie years of Kyrie Irving and Tyreke Evans, both rookie of the year winners. However, it’s not out of the question that Doncic ultimately matches the metric scores put up by Blake Griffin, Karl-Anthony Towns and Ben Simmons in their rookie campaigns.</p>
     <p>Since Doncic doesn’t have a full season’s worth of games yet, the potential number of winshares available to him is deflated. Given Doncic’s success thus far, along with the rebuilt roster following the trades that shipped out Harrison Barnes, Dennis Smith Jr. and DeAndre Jordan, it’s not inconceivable that his final total in winshares gives him enough of a boost to place him among that top trio. </p>
-    <p>As it is, Doncic ranks fourth out of the <span class="rookie_count"></span> rookies since 2008-09 in our analysis’ advanced metrics score and eighth in our traditional metrics score. When it comes to points per game alone, Doncic’s <span class="smart-text__ppg" data-player="Luka Doncic"></span> is second only to Blake Griffin.</p>
+    <p>As it is, Doncic ranks fourth out of the <span class="rookie_count"></span> rookies since 2008-09 in our analysis’ advanced metrics score and eighth in our traditional metrics score. When it comes to points per game alone, Doncic’s <span class="smart-text__ppg" data-player="Luka Doncic"></span> is second only to Blake Griffin’s 22.5.</p>
 
     <div id="all-roty" class="chart">
       <div class="chatter">
@@ -256,12 +251,12 @@ googletag.cmd.push(function () {
     </div>
 
     <p class="subhead">What about Ayton?</p>
-    <p>Doncic’s successes on the court and the hype surrounding his rookie campaign may lead to him running away with the rookie of the year voting. But by a pure numbers standpoint, the Suns’ Ayton still has a chance, though it is a longshot. A very long shot.</p>
+    <p>Doncic’s successes on the court and the hype surrounding his rookie campaign may lead to him running away with the rookie of the year voting. But by a pure numbers standpoint, the Suns’ Ayton is the only other rookie remotely close.</p>
     <p>Ayton’s dominance on the glass (<span class="smart-text__rbg" data-player="Deandre Ayton"></span> rebounds per game) and scoring output (<span class="smart-text__ppg" data-player="Deandre Ayton"></span> points per game, third behind Doncic and Atlanta’s Trae Young) push him into the second spot in our traditional metrics score. And despite lagging far behind Doncic in box plus/minus and usage percentage, he’s still second best in our advance metrics score.</p>
     <p>But what Ayton lacks is consistently being the first option on his team. The Mavericks offense has flowed through Doncic all season, even more so after Barnes was shipped off to Sacramento. In Phoenix, Devin Booker is the Suns’ best player, and Ayton even falls behind T.J. Warren in scoring among his teammates.</p>
-    <p>And then there’s the hype and clutch play. The 19-year-old Mavericks rookie has made plenty of highlight reels, including his <a href="https://sportsday.dallasnews.com/dallas-mavericks/mavericks/2018/12/09/nba-king-texas-moment-mavericks" target="_blank">11-0 scoring run</a> over the final two minutes of play to lift Dallas to a victory over in-state rival Houston in December. That’s just one instance of the 10 times Doncic has hit a field goal to tie or take the lead in a game in the last two minutes of the fourth quarter or overtime, the most in the NBA.</p>
-    <p>So, while Ayton trails Doncic in both our traditional and advanced metric scores, Doncic is almost as sure a bet as you could make. The DraftKings Sportsbook lists Doncic as -10000 to win the award, meaning a bet of $10,000 would pay back only $100.</p>
-    <p>In a season that is sure to be the last for Dirk Nowitzki, the face of the francise, and the Mavericks’ by all accounts fleeced the Knicks in a trade for Kristaps Porzingis, Doncic’s rookie season has never stopped being the story. Don’t expect that to change when the league hands out its hardware for best rookie.</p>
+    <p>And then there’s the hype and clutch play. The 19-year-old Mavericks rookie has made plenty of highlight reels, including his <a href="https://sportsday.dallasnews.com/dallas-mavericks/mavericks/2018/12/09/nba-king-texas-moment-mavericks" target="_blank">11-0 scoring run</a> over the final two minutes of play to lift Dallas to a victory over in-state rival Houston in December. That’s just one instance of the 11 times Doncic has hit a field goal to tie or take the lead in a game in the last two minutes of the fourth quarter or overtime, the most in the NBA.</p>
+    <p>So, while Ayton trails Doncic in both our traditional and advanced metric scores, Doncic is almost as sure a bet as you could make. The DraftKings Sportsbook lists Doncic as -10,000 to win the award, meaning a bet of $10,000 would pay back only $100.</p>
+    <p>In a season that is sure to be the last for Dirk Nowitzki, the face of the franchise, and the Mavericks’ fleecing of the Knicks, by all accounts, in a trade for Kristaps Porzingis, Doncic’s rookie year has never stopped being the story. Don’t expect that to change when the league hands out its hardware for best rookie.</p>
 
     <div class="subscribe-cta">
       <h4>Looking for more great Mavericks coverage?</h4>
@@ -292,7 +287,7 @@ googletag.cmd.push(function () {
     <div class="explainer explainer__term explainer--hidden" data-term="usage">
       <span class="explainer__close"></span>
       <h6>Usage percentage (USG)</h6>
-      <p>Usage percentage is an estimate of the percentage of team plays used by a player while he is on the floor. Any play that ends in a player’s field goal attempt, free throw attempt or turnover is considerd to be used by that player. Source: <a href="https://www.basketball-reference.com/about/glossary.html" target="_blank">Basketball Reference</a></p>
+      <p>Usage percentage is an estimate of the percentage of team plays used by a player while he is on the floor. Any play that ends in a player’s field goal attempt, free throw attempt or turnover is considered to be used by that player. Source: <a href="https://www.basketball-reference.com/about/glossary.html" target="_blank">Basketball Reference</a></p>
     </div>
 
     <div class="explainer explainer__term explainer--hidden" data-term="player efficiency">

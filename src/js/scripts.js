@@ -12,7 +12,7 @@ import smartText from './smart-text';
 import drawWinners from './drawWinners';
 import displayExplainer from './explainer';
 
-import glossary from './glossary.json';
+// import glossary from './glossary.json';
 
 $(document).ready(() => {
 
@@ -59,7 +59,6 @@ $(document).ready(() => {
   // toggles the visibility of various elements with the traditional or advanced
   // class depending on which mode is chosen
   function metricDisplay() {
-    console.log('Our mode is ', mode);
     if (mode === 'traditional') {
       $('.traditional').removeClass('no-show');
       $('.advanced').addClass('no-show');
@@ -97,7 +96,6 @@ $(document).ready(() => {
   function metricSwitcher(data) {
     $('.metric__flipper button').on('click', function () {
       // $('.metric__flipper button').toggleClass('flipper__traditional flipper__advanced');
-      console.log('getting mode');
       mode = $(this).attr('class').split('__')[1]; // update the mode
       drawTopSix(data, FORMATTED_DATA); // redraw the top five
       metricDisplay(mode); // show/hide appropriate elements
@@ -133,7 +131,6 @@ $(document).ready(() => {
       FORMATTED_DATA.push(metricObject);
     });
 
-    $('#luka-answer').text(smartText.headline(data)); // upates the answer to the headline question
     smartText.updateSmartText(data, 'Luka Doncic');
     smartText.updateSmartText(data, 'Deandre Ayton');
     smartText.updateSmartText(data, 'Jaren Jackson');

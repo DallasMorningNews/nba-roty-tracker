@@ -17,7 +17,6 @@ export default function () {
     'Ben Simmons',
     'Luka Doncic',
   ];
-  console.log(pastWinners);
 
   const years = ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'];
 
@@ -35,7 +34,6 @@ export default function () {
 
   const barData = bars.filter(bar => bar.year !== null);
 
-  console.log(barData);
   // setting our graphics margin
   const margin = { top: 5, right: 10, bottom: 5, left: 10 };
 

@@ -77,7 +77,7 @@ export default function (originalData, formattedData, name, metricFormat) {
           .attr('stroke-opacity', (d) => {
             if (d[0] === name) {
               return 1;
-            } return 0.4;
+            } return 0.7;
           })
           .style('fill', (d) => {
             if (d[0] === name && d[0] === 'Luka Doncic') {
@@ -89,7 +89,7 @@ export default function (originalData, formattedData, name, metricFormat) {
           .style('opacity', (d) => {
             if (d[0] === name) {
               return 0.9;
-            } return 0.25;
+            } return 0.35;
           });
   });
 

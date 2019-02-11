@@ -4,7 +4,6 @@ import apOrdinal from './ap-ordinal';
 
 
 export default function (data, metric) {
-  console.log(data.players[0]);
   let thisMode = metric; // defining whether we're looking at traditional or advanced metrics
   let playerRanks = []; // empty array to hold our players
 
