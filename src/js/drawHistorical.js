@@ -75,7 +75,7 @@ export default function () {
 
     tooltip.style('left', function (d) {
       if (leftPos + 200 > (window.innerWidth * 0.9)) {
-        return `${leftPos - (200 - (5 * 2))}px`;
+        return `${leftPos - (100 - (5 * 2))}px`;
       } return `${leftPos}px`;
     })
     .style('top', `${topPos + (5 * 2) + 5}px`);
@@ -172,11 +172,11 @@ export default function () {
     .on('mouseover', tipMouseover)
     .on('mouseout', tipMouseout);
 
-
-
   d3.selectAll('.rookie-dot').filter(function (d) {
     if ((d !== undefined && ROTY.includes(d.name)) || (d !== undefined && d.year === '2018-19')) {
       d3.select(this).moveToFront();
     } return null;
   });
+
+  window.addEventListener('scroll', tipMouseout);
 }

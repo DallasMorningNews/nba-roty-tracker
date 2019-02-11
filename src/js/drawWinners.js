@@ -204,4 +204,6 @@ export default function () {
       .attr('fill-opacity', 1)
       .on('mouseover', tipMouseover)
       .on('mouseout', tipMouseout);
+
+  window.addEventListener('scroll', tipMouseout);
 }

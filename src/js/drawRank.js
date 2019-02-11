@@ -271,4 +271,6 @@ export default function (data, metric) {
     animateData();
     updateChatter();
   });
+
+  window.addEventListener('scroll', tipMouseout);
 }
