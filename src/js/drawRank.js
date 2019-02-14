@@ -50,7 +50,6 @@ export default function (data, metric) {
   if (metric === 'traditional') {
     x.domain(d3.extent(playerRanks, d => d[1]));
     minMax = d3.extent(playerRanks, d => d[1]);
-    console.log(minMax);
   } else if (metric === 'advanced') {
     x.domain(d3.extent(playerRanks, d => d[2]));
     minMax = d3.extent(playerRanks, d => d[2]);
