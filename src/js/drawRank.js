@@ -50,10 +50,13 @@ export default function (data, metric) {
   if (metric === 'traditional') {
     x.domain(d3.extent(playerRanks, d => d[1]));
     minMax = d3.extent(playerRanks, d => d[1]);
+    console.log(minMax);
   } else if (metric === 'advanced') {
     x.domain(d3.extent(playerRanks, d => d[2]));
     minMax = d3.extent(playerRanks, d => d[2]);
   }
+
+  const formatDec2 = d3.format(".2s");
 
   // our xAxis
   const xAxis = d3.axisBottom(x)
@@ -67,13 +70,38 @@ export default function (data, metric) {
     .attr('height', svgHeight);
 
   // creating the line that the dots live on
-  // svg.append('line')
-  //   .attr('x1', dotRadius)
-  //   .attr('x2', svgWidth - (dotRadius * 2))
-  //   .attr('y1', dotRadius + 2)
-  //   .attr('y2', dotRadius + 2)
-  //   .attr('stroke', 'rgb(215,215,215)')
-  //   .attr('stroke-width', 1);
+  svg.append('line')
+    .attr('x1', dotRadius)
+    .attr('x2', svgWidth - (dotRadius * 2))
+    .attr('y1', dotRadius + 2)
+    .attr('y2', dotRadius + 2)
+    .attr('stroke', 'rgb(215,215,215)')
+    .attr('stroke-width', 1);
+
+  svg.append('text')
+    .attr('class', 'axis__label axis__0')
+    .text(0)
+    .attr('x', x(0))
+    .attr('y', 30)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', 12);
+
+  svg.append('text')
+    .attr('class', 'axis__label axis__start')
+    .text(minMax[0].toFixed(2))
+    .attr('x', x(minMax[0]))
+    .attr('y', 30)
+    .attr('text-anchor', 'start')
+    .attr('font-size', 12);
+
+  svg.append('text')
+    .attr('class', 'axis__label axis__end')
+    .text(minMax[1].toFixed(2))
+    .attr('x', x(minMax[1]))
+    .attr('y', 30)
+    .attr('text-anchor', 'end')
+    .attr('font-size', 12);
+
 
   // creating our tooltip element
   const tooltip = d3.select('#player__ranks .chart__container').append('div')
@@ -118,12 +146,12 @@ export default function (data, metric) {
       .style('opacity', 0);
   };
 
-  svg.append('g')
-    .attr('class', 'x axis')
-    .attr('transform', `translate(0, ${(dotRadius) + 2})`)
-    .call(xAxis)
-    .selectAll('.x text')
-    .attr('dy', 15);
+  // svg.append('g')
+  //   .attr('class', 'x axis')
+  //   .attr('transform', `translate(0, ${(dotRadius) + 2})`)
+  //   .call(xAxis)
+  //   .selectAll('.x text')
+  //   .attr('dy', 15);
 
   svg.append('line')
     .attr('class', 'zeroLine')
@@ -177,14 +205,31 @@ export default function (data, metric) {
         } return x(d[2]);
       });
 
-    xAxis.tickValues([minMax[0], 0, minMax[1]]);
+    // xAxis.tickValues([minMax[0], 0, minMax[1]]);
+    //
+    // svg.select('.x')
+    //   .transition()
+    //   .duration(1000)
+    //   .call(xAxis);
+    //   // .selectAll('text')
+    //   //   .attr('dy', 30);
 
-    svg.select('.x')
+    d3.select('.axis__0')
       .transition()
       .duration(1000)
-      .call(xAxis);
-      // .selectAll('text')
-      //   .attr('dy', 30);
+      .attr('x', x(0));
+
+    d3.select('.axis__start')
+      .transition()
+      .duration(1000)
+      .text(minMax[0].toFixed(2))
+      .attr('x', x(minMax[0]));
+
+    d3.select('.axis__end')
+      .transition()
+      .duration(1000)
+      .text(minMax[1].toFixed(2))
+      .attr('x', x(minMax[1]));
 
     setTimeout(() => {
       svg.selectAll('.x text')
