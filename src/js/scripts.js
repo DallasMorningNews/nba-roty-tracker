@@ -12,8 +12,6 @@ import smartText from './smart-text';
 import drawWinners from './drawWinners';
 import displayExplainer from './explainer';
 
-// import glossary from './glossary.json';
-
 $(document).ready(() => {
 
   $('.highlight').click(function () {
@@ -133,7 +131,7 @@ $(document).ready(() => {
 
     smartText.updateSmartText(data, 'Luka Doncic');
     smartText.updateSmartText(data, 'Deandre Ayton');
-    smartText.updateSmartText(data, 'Jaren Jackson');
+    smartText.updateSmartText(data, 'Trae Young');
     smartText.updateDifferences(data, 'total_stand_zscore', 'Luka Doncic', 'Deandre Ayton');
     drawRank(data, mode); // draws the ranking chart
     drawTopSix(data, FORMATTED_DATA); // draws the top five chart
