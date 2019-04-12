@@ -49,8 +49,8 @@
   {"year": "2018", "stat": "advanced", "playername": "Donovan Mitchell", "playerscore": 7.30},
   {"year": "2018", "stat": "advanced", "playername": "Ben Simmons", "playerscore": 10.18},
 
-  {"year": "2019", "stat": "traditional", "playername": "Luka Doncic", "playerscore": 7.26},
-  {"year": "2019", "stat": "traditional", "playername": "Deandre Ayton", "playerscore": 6.39},
-  {"year": "2019", "stat": "advanced", "playername": "Luka Doncic", "playerscore": 10.29},
-  {"year": "2019", "stat": "advanced", "playername": "Deandre Ayton", "playerscore": 7.84},
+  {"year": "2019", "stat": "traditional", "playername": "Luka Doncic", "playerscore": 6.51},
+  {"year": "2019", "stat": "traditional", "playername": "Deandre Ayton", "playerscore": 4.77},
+  {"year": "2019", "stat": "advanced", "playername": "Luka Doncic", "playerscore": 8.23},
+  {"year": "2019", "stat": "advanced", "playername": "Deandre Ayton", "playerscore": 5.46},
 ]
